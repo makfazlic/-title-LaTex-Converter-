@@ -16,33 +16,33 @@ public class ParseEx {
             Map.Entry pair = (Map.Entry)it.next();
             String str1 = str.substring((Integer) pair.getKey() +1, (Integer) pair.getValue());
             System.out.println(str1);
-            it.remove(); // avoids a ConcurrentModificationException
+            it.remove();
         }  
     }
 
-    private static Boolean validParen(HashMap map) {
-        int i = 0;
-        int j = 0;
+    public static Boolean validParen(String ex) {
         
-        Iterator it = map.entrySet().iterator();
-        while (it.hasNext()) {
-            Map.Entry pair = (Map.Entry)it.next();
-            if (pair.getValue().toString().equals("(")) {
-                i++;
+        ArrayList<String> parenthesis = new ArrayList<String>();
+        
+        for (int i=0; i<ex.length(); i++){
+            if (ex.charAt(i) == ('(')) {
+                parenthesis.add("(");
             }
-            if (pair.getValue().toString().equals(")")) {
-                j++;
+            if (ex.charAt(i) == (')')) {
+                parenthesis.add(")");
             }
         }
-        if (i == j) {
+
+        if (parenthesis.get(0).equals("(") && Collections.frequency(parenthesis, "(") == Collections.frequency(parenthesis, ")")) {
             return true;
         }
         return false;
-    } 
+
+    }
 
     private static HashMap sortByKeys(HashMap map) { 
         List list = new LinkedList(map.entrySet());
-        // Defined Custom Comparator here
+        
         Collections.sort(list, new Comparator() {
              public int compare(Object o1, Object o2) {
                 return ((Comparable) ((Map.Entry) (o1)).getKey())
@@ -50,8 +50,7 @@ public class ParseEx {
              }
         });
  
-        // Here I am copying the sorted list in HashMap
-        // using LinkedHashMap to preserve the insertion order
+
         HashMap sortedHashMap = new LinkedHashMap();
         for (Iterator it = list.iterator(); it.hasNext();) {
                Map.Entry entry = (Map.Entry) it.next();
@@ -63,42 +62,34 @@ public class ParseEx {
     public static HashMap orderEx(String ex) {
 
         HashMap parenthesis = new HashMap<>();
-        HashMap sumofparen = new HashMap<>();
-        
-        for (int i=0; i<ex.length(); i++){
-            if (ex.charAt(i) == ('(')) {
-                sumofparen.put(i, '(');
-            }
-            if (ex.charAt(i) == (')')) {
-                sumofparen.put(i, ')');
-            }
-        }
 
-     // outer loop prints weeks
-     for (int i=0; i<ex.length(); i++) {
-        
-         if (ex.charAt(i) == '(') {
-             // inner loop prints
-             int opennumber = 0;
-             int closenumber = 0;
-             for (int j = i; j < ex.length(); j++) {
-                 if (ex.charAt(j) == '(') {
-                        opennumber++;
-                        //System.out.println("open at " + j + ex.charAt(j));
-                    } else if (ex.charAt(j) == ')'){
-                        closenumber++;
-                        //System.out.println("close at " + j + ex.charAt(j)); 
-                        if (opennumber == closenumber) {
-                            System.out.println( i + " " + j);
-                            parenthesis.put(i, j);
-                            break;  
+        if (validParen(ex)) { 
+
+            for (int i=0; i<ex.length(); i++) {
+            
+                if (ex.charAt(i) == '(') {
+
+                    int opennumber = 0;
+                    int closenumber = 0;
+                    for (int j = i; j < ex.length(); j++) {
+                        if (ex.charAt(j) == '(') {
+                            opennumber++;
+                            //System.out.println("open at " + j + ex.charAt(j));
+                        } else if (ex.charAt(j) == ')'){
+                            closenumber++;
+                            //System.out.println("close at " + j + ex.charAt(j)); 
+                            if (opennumber == closenumber) {
+                                System.out.println( i + " " + j);
+                                parenthesis.put(i, j);
+                                break;  
+                            }
                         }
                     }
                 }
-            }
 
             ex = ex.substring(0, i) + '#'+ ex.substring(i + 1);
-        }
+            }
+        }   
         return parenthesis;
     }
 
@@ -117,6 +108,35 @@ public class ParseEx {
 
 
     // Scrapped code
+
+
+    /**
+    
+    
+    
+        private static Boolean validParen(HashMap map) {
+        int i = 0;
+        int j = 0;
+        
+        Iterator it = map.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+            if (pair.getValue().toString().equals("(")) {
+                i++;
+            }
+            if (pair.getValue().toString().equals(")")) {
+                j++;
+            }
+        }
+        if (i == j) {
+            return true;
+        }
+        return false;
+    } 
+    
+    
+     */
+
     /**
      * 
      *  private static HashMap beautifyMap(HashMap map) {
