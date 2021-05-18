@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=LiteralTokenFactoryTest
+comment1.params=
+comment1.target=void\ testFoundLength1()
+comment2.params=
+comment2.target=void\ testFoundLength3()
+comment3.params=
+comment3.target=void\ testNoMatchNotFound()
+numComments=4

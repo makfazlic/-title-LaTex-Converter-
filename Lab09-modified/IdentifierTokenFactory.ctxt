@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=IdentifierTokenFactory
+comment0.text=\n\ A\ factory\ for\ tokens\ of\ type\ identifier.\n
+comment1.params=
+comment1.target=IdentifierTokenFactory()
+comment1.text=\n\ Create\ an\ IdentifierTokenFactory.\n
+comment2.params=
+comment2.target=Token\ getToken()
+comment2.text=\n\ Produce\ a\ token.\n\ @return\ the\ currently\ found\ token\n
+numComments=3

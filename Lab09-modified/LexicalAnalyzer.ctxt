@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=LexicalAnalyzer
+comment0.text=\n\ A\ LexicalAnalyzer\ breaks\ a\ String\ into\ Tokens.\n\ \n\ <pre>\n\ lexer.fetchNextToken();\n\ Token\ t1\ \=\ lexer.getCurrentToken();\n\ </pre>\ \n
+comment1.params=expression\ factories
+comment1.target=LexicalAnalyzer(java.lang.String,\ TokenFactory[])
+comment1.text=\n\ Create\ an\ analyzer\ for\ the\ given\ text,\ \n\ using\ the\ given\ factories\ to\ recognize\ and\ create\ tokens.\n\ @param\ expression\ The\ text\ to\ analyze\n\ @param\ factories\ The\ token\ factories\ to\ use\n
+comment2.params=expression
+comment2.target=LexicalAnalyzer(java.lang.String)
+comment2.text=\n\ Create\ an\ analyzer\ for\ the\ given\ text.\n\ @param\ expression\ The\ text\ to\ analyze\n
+comment3.params=expression
+comment3.target=void\ setText(java.lang.String)
+comment3.text=\n\ Provide\ a\ new\ text\ to\ analyze.\n\ @param\ expression\ The\ text\ to\ analyze\n
+comment4.params=
+comment4.target=void\ fetchNextToken()
+comment4.text=\n\ Ask\ the\ analyzer\ to\ move\ to\ the\ next\ token\ in\ the\ text.\n
+comment5.params=
+comment5.target=Token\ scanToken()
+comment5.text=\n\ Scan\ the\ text\ and\ extract\ the\ next\ token.\n\ @return\ the\ next\ token\n
+comment6.params=
+comment6.target=Token\ getCurrentToken()
+comment6.text=\n\ Get\ the\ current\ token.\n\ @return\ the\ current\ token\n
+numComments=7

@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Literal
+comment0.text=\n\ A\ Literal\ is\ an\ AST\ node\ that\ \n\ corresponds\ to\ a\ literal\ integer\ value\n\ (a\ number\ in\ the\ source\ code).\n
+comment1.params=value
+comment1.target=Literal(int)
+comment1.text=\n\ Create\ a\ new\ Literal\ node.\n\ @param\ value\ the\ integer\ value\ this\ node\ evaluates\ to\n
+comment2.params=
+comment2.target=Type\ getType()
+comment3.params=
+comment3.target=java.lang.String\ toString()
+numComments=4

@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=RegExTokenFactoryTest
+comment1.params=
+comment1.target=void\ testMatchFixed()
+comment2.params=
+comment2.target=void\ testMatchFlexible()
+comment3.params=
+comment3.target=void\ testMatchThereAndNotEarlier()
+comment4.params=
+comment4.target=void\ testMatchThereAndNotLater()
+comment5.params=
+comment5.target=void\ testNoMatchNowhere()
+comment6.params=
+comment6.target=void\ testStartOutOfBounds()
+numComments=7

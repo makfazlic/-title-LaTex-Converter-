@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=DemoParser
+comment0.text=\n\ A\ DemoParser\ for\ the\ very\ simple\ Demo\ language.\n\ \n\ <code>\n\ DEMO_EXPRESSION\ \:\:\=\ Literal\ ("+"\ |\ "-")\ Literal\n\ </code>\n
+comment1.params=sourceCode
+comment1.target=Node\ parse(java.lang.String)
+comment1.text=\n\ Parse\ a\ program\ in\ the\ Demo\ language.\n\ @param\ sourceCode\ The\ source\ code\ of\ the\ program\ in\ the\ Demo\ language\n\ @return\ an\ AST\ of\ the\ program\n
+comment2.params=
+comment2.target=Node\ parseDemoExpression()
+comment2.text=\n\ Parse\ a\ DEMO_EXPRESSION\ (e.g.,\ "12-2").\n\ \n\ <p>EBNF\:\n\ <code>\n\ DEMO_EXPRESSION\ \:\:\=\ Literal\ ("+"\ |\ "-")\ Literal\n\ </code>\n\ \n\ @return\ a\ Node\ representing\ the\ demo\ expression\n
+numComments=3

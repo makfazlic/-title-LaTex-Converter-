@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=ArithParser
+comment0.text=\n\ A\ Parser\ for\ our\ Arith\ language\n\ (a\ simple\ language\ of\ arithmetic\ expressions).\n\ \n\ <code>\n\ EXPRESSION\ \ \ \:\:\=\ [\ "+"\ |\ "-"\ ]\ TERM\ {\ (\ "+"\ |\ "-"\ )\ TERM\ }\n\ TERM\ \ \ \ \ \ \ \ \ \:\:\=\ FACTOR\ {\ (\ "*"\ |\ "/"\ )\ FACTOR\ }\n\ FACTOR\ \ \ \ \ \ \ \:\:\=\ Literal\ |\ \n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Identifier|\ \n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "("\ EXPRESSION\ ")"\n\ </code>\n
+comment1.params=sourceCode
+comment1.target=Node\ parse(java.lang.String)
+comment1.text=\n\ Parse\ a\ program\ in\ the\ Arith\ language.\n\ @param\ sourceCode\ The\ source\ code\ of\ the\ program\ in\ the\ Arith\ language\n\ @return\ an\ AST\ of\ the\ program\n
+comment2.params=
+comment2.target=Node\ parseExpression()
+comment2.text=\n\ Parse\ an\ expression.\n\ This\ assumes\ the\ lexer\ already\ points\ to\ the\ first\ token\ of\ this\ expression.\n\ \n\ <p>EBNF\:\n\ <code>\n\ EXPRESSION\ \:\:\=\ [\ "+"\ |\ "-"\ ]\ TERM\ {\ (\ "+"\ |\ "-"\ )\ TERM\ }\n\ </code>\n\ \n\ @return\ a\ Node\ representing\ the\ expression\n
+comment3.params=
+comment3.target=Node\ parseTerm()
+comment3.text=\n\ Parse\ a\ term.\n\ This\ assumes\ the\ lexer\ already\ points\ to\ the\ first\ token\ of\ this\ term.\n\ \n\ <p>EBNF\:\n\ <code>\n\ TERM\ \:\:\=\ FACTOR\ {\ (\ "*"\ |\ "/"\ )\ FACTOR\ }\n\ </code>\n\ \n\ @return\ a\ Node\ representing\ the\ term\n
+comment4.params=
+comment4.target=Node\ parseFactor()
+comment4.text=\n\ Parse\ a\ factor.\n\ This\ assumes\ the\ lexer\ already\ points\ to\ the\ first\ token\ of\ this\ factor.\n\ \n\ <p>EBNF\:\n\ <code>\n\ FACTOR\ \:\:\=\ \ \n\ \ \ \ \ \ \ \ \ \ Literal\ |\ \n\ \ \ \ \ \ \ \ \ \ Identifier\ |\ \n\ \ \ \ \ \ \ \ \ \ Root\ |\n\ \ \ \ \ \ \ \ \ \ Limit\ |\n\ \ \ \ \ \ \ \ \ \ "("\ EXPRESSION\ ")"\n\ </code>\n\ \n\ @return\ a\ Node\ representing\ the\ factor\n
+numComments=5

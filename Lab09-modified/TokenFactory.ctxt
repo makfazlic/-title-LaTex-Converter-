@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=TokenFactory
+comment0.text=\n\ A\ TokenFactory\ can\ produce\ Tokens.\n
+comment1.params=text
+comment1.target=void\ setText(java.lang.String)
+comment1.text=\n\ Set\ the\ text\ in\ which\ to\ look\ for\ tokens.\n\ @param\ text\ The\ text\ to\ scan\ for\ tokens\n
+comment2.params=startFrom
+comment2.target=boolean\ find(int)
+comment2.text=\n\ Look\ for\ tokens\ in\ the\ text,\ starting\ from\ the\ given\ position.\n\ @param\ startFrom\ The\ position\ in\ the\ text\ at\ which\ to\ start\ looking\n\ @return\ true\ of\ the\ factory\ can\ produce\ a\ token\ from\ the\ given\ position\n
+comment3.params=
+comment3.target=int\ getTokenLength()
+comment3.text=\n\ Get\ the\ length\ of\ the\ token\ we\ found\ at\ the\ start\ position\ in\ the\ text.\n\ @return\ The\ length\ (in\ number\ of\ characters)\n
+comment4.params=
+comment4.target=Token\ getToken()
+comment4.text=\n\ Get\ the\ token\ we\ found\ at\ the\ start\ position\ in\ the\ text.\n\ @return\ The\ token\n
+numComments=5
