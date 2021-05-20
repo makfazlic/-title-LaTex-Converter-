@@ -31,6 +31,6 @@ public class Limit extends Node
  
     @Override
     public String toString() {
-        return "(/lim_{" + variable.toString() + "/" + value.toString() + "}{" + child.toString() + "})";
+        return "(/lim_{" + variable.toString() + "/to" + value.toString() + "}{" + child.toString() + "})";
     }
 }
