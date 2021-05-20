@@ -53,6 +53,11 @@ public final class ArithParser implements Parser {
         } else {
             // when literal has not sign
             expressionNode = this.parseTerm();
+            if (lexer.getCurrentToken().getText().equals("^")) {
+                this.lexer.fetchNextToken();
+                expressionNode = new Power(expressionNode, this.parseTerm());
+                this.lexer.fetchNextToken();
+            }
         }
         
         // do a loop for all TERM in the EXPRESSION
@@ -151,7 +156,7 @@ public final class ArithParser implements Parser {
                     final Node variable = new Variable(lexer.getCurrentToken().getText());
                     this.lexer.fetchNextToken();    //
                     this.lexer.fetchNextToken();    // go until value
-                    this.lexer.fetchNextToken();    //
+                    this.lexer.fetchNextToken();
                     // variable value
                     final Node value = new Literal(Integer.parseInt(lexer.getCurrentToken().getText()));
                     this.lexer.fetchNextToken();
