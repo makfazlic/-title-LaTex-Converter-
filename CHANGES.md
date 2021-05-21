@@ -19,6 +19,7 @@
 
 ## 21th May, Friday
 - Call with the TA to show our progress and clarify some problems
+- We applied some new features which make the code more robust
 
 ## TO DO
 - Finish the GUI
