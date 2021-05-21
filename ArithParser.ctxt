@@ -13,4 +13,10 @@ comment3.text=\n\ Parse\ a\ term.\n\ This\ assumes\ the\ lexer\ already\ points\
 comment4.params=
 comment4.target=Node\ parseFactor()
 comment4.text=\n\ Parse\ a\ factor.\n\ This\ assumes\ the\ lexer\ already\ points\ to\ the\ first\ token\ of\ this\ factor.\n\ \n\ <p>EBNF\:\n\ <code>\n\ FACTOR\ \:\:\=\ \ \n\ \ \ \ \ \ \ \ \ \ Literal\ |\ \n\ \ \ \ \ \ \ \ \ \ Identifier\ |\ \n\ \ \ \ \ \ \ \ \ \ Root\ |\n\ \ \ \ \ \ \ \ \ \ Limit\ |\n\ \ \ \ \ \ \ \ \ \ "("\ EXPRESSION\ ")"\n\ </code>\n\ \n\ @return\ a\ Node\ representing\ the\ factor\n
-numComments=5
+comment5.params=
+comment5.target=Node\ limitParser()
+comment6.params=
+comment6.target=Node\ rootParser()
+comment7.params=expectedToken
+comment7.target=boolean\ tokenAnalyzer(java.lang.String)
+numComments=8

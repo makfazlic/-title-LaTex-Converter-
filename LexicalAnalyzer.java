@@ -45,6 +45,7 @@ public final class LexicalAnalyzer {
             new OperatorTokenFactory("^", TokenType.HAT),
             new OperatorTokenFactory(":", TokenType.COLON),
             new OperatorTokenFactory(">", TokenType.GR_THAN),
+            new OperatorTokenFactory(",", TokenType.COMMA),
         });
     }
 

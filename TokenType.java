@@ -15,6 +15,7 @@ public enum TokenType {
     SLASH("slash"), 
     PERCENT("percent"),
     COLON("colon"),
+    COMMA("comma"),
 
     OPEN_PAREN("open parenthesis"), 
     CLOSED_PAREN("closed parenthesis"),

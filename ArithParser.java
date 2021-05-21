@@ -139,30 +139,12 @@ public final class ArithParser implements Parser {
                 // root case
                 case "root":
                     this.lexer.fetchNextToken();
-                    this.lexer.fetchNextToken();
-                    // root grade
-                    final Node grade = new Literal(Integer.parseInt(lexer.getCurrentToken().getText()));
-                    this.lexer.fetchNextToken();
-                    // creation root
-                    factorNode = new Root(grade, this.parseExpression());
-                    this.lexer.fetchNextToken();
+                    factorNode = this.rootParser(); // go through the expression to exctract the root
                     break;
                 // limit case
                 case "lim":
-                    this.lexer.fetchNextToken();    //
-                    this.lexer.fetchNextToken();    // go until variable
-                    this.lexer.fetchNextToken();    //
-                    // limit variable
-                    final Node variable = new Variable(lexer.getCurrentToken().getText());
-                    this.lexer.fetchNextToken();    //
-                    this.lexer.fetchNextToken();    // go until value
                     this.lexer.fetchNextToken();
-                    // variable value
-                    final Node value = new Literal(Integer.parseInt(lexer.getCurrentToken().getText()));
-                    this.lexer.fetchNextToken();
-                    //creation limit
-                    factorNode = new Limit(this.parseExpression(), variable, value);
-                    this.lexer.fetchNextToken();
+                    factorNode = this.limitParser(); // go through the expression to exctract the limit
                     break;
                 // variable case
                 default:
@@ -178,4 +160,76 @@ public final class ArithParser implements Parser {
         return factorNode;
     }
 
+    public Node limitParser() {
+        Node limitNode;
+        final Node variable;
+        final Node value;
+        // check if the user used ":" after the limit
+        if (this.tokenAnalyzer(":")) {
+            this.lexer.fetchNextToken();
+            this.lexer.fetchNextToken();
+            // limit variable
+            variable = new Variable(lexer.getCurrentToken().getText());
+        } else {
+            // TODO
+            // Exception wrong token
+            variable = null;
+        }
+        this.lexer.fetchNextToken();
+        // check if the user used "," between variable and value
+        if (this.tokenAnalyzer(",")) {
+            this.lexer.fetchNextToken();
+            // limit variable
+            value = new Literal(Integer.parseInt(lexer.getCurrentToken().getText()));
+            this.lexer.fetchNextToken();
+        } else {
+            // TODO
+            // Exception wrong token
+            value = null;
+        }        
+        this.lexer.fetchNextToken();
+        // check if the user used ":" between variable declaration and the body of the limit
+        if (this.tokenAnalyzer(":")) {
+            //creation limit
+            limitNode = new Limit(this.parseExpression(), variable, value);
+        } else {
+            // TODO
+            // Exception wrong token
+            limitNode = null;
+        }
+
+        this.lexer.fetchNextToken();
+        return limitNode;
+    }
+    
+    public Node rootParser() {
+        Node rootNode;
+        final Node grade;
+        // check if the user used ":" after the root
+        if (this.tokenAnalyzer(":")) {
+            this.lexer.fetchNextToken();
+            grade = new Literal(Integer.parseInt(lexer.getCurrentToken().getText()));
+        } else {
+            // TODO
+            // Exception wrong token
+            grade = null;
+        }        
+        this.lexer.fetchNextToken();
+        // check if the user used ":" between the grade of the root and its body
+        if (this.tokenAnalyzer(":")) {
+            // creation root
+            rootNode = new Root(grade, this.parseExpression());
+        } else {
+            // TODO
+            // Exception wrong token
+            rootNode = null;
+        }
+        
+        this.lexer.fetchNextToken();
+        return rootNode;
+    }
+    
+    public boolean tokenAnalyzer(String expectedToken) {
+        return this.lexer.getCurrentToken().getText().equals(expectedToken);
+    }
 }
