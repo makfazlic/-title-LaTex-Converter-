@@ -1,13 +1,13 @@
 
 /**
- * An Integer multiplication.
+ * An Integer Multiplication.
  *
- * @author Roberto Ferrari
- * @version v0.1
+ * @author Mak Fazlic & Roberto Ferrari - Latex project.
+ * @version v1.0
  */
 public class Multiplication extends Node
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private final Node leftChild;
     private final Node rightChild;
 
@@ -16,8 +16,7 @@ public class Multiplication extends Node
      * @param leftChild is the first node of the expression.
      * @param rightChild is the second node of the expression.
      */
-    public Multiplication(final Node leftChild, final Node rightChild)
-    {
+    public Multiplication(final Node leftChild, final Node rightChild){
         super();
         this.leftChild = leftChild;
         this.rightChild = rightChild;
@@ -29,7 +28,8 @@ public class Multiplication extends Node
     }
 
     @Override
+    // Returns Latex of Multiplication
     public String toString() {
-        return "(" + leftChild.toString() + "*" + rightChild.toString() + ")";
+        return "{\\left(" + leftChild.toString() + "*" + rightChild.toString() + "\\right)}";
     }
 }

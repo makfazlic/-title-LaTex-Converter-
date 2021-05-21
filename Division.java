@@ -1,9 +1,8 @@
-
 /**
  * An Integer division.
  *
- * @author Roberto Ferrari
- * @version v0.1
+ * @author Mak Fazlic & Roberto Ferrari - Latex project.
+ * @version v1.0
  */
 public class Division extends Node
 {
@@ -16,8 +15,7 @@ public class Division extends Node
      * @param leftChild expression Node.
      * @param rightChild expression Node.
      */
-    public Division(final Node leftChild, final Node rightChild)
-    {
+    public Division(final Node leftChild, final Node rightChild){
         super();
         this.leftChild = leftChild;
         this.rightChild = rightChild;
@@ -29,7 +27,8 @@ public class Division extends Node
     }
  
     @Override
+    // Returns Latex of Division
     public String toString() {
-        return "(/frac{" + leftChild.toString() + "}{" + rightChild.toString() + "})";
+        return "\\frac{" + leftChild.toString() + "}{" + rightChild.toString() + "}";
     }
 }

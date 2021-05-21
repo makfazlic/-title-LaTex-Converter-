@@ -16,7 +16,7 @@ import org.junit.Test;
  *                  "(" EXPRESSION ")"
  * </code>
  */
-public class ArithParserTest {
+public class ArithParserTest{
 
     @Test
     public void testLiteral() {
@@ -145,31 +145,17 @@ public class ArithParserTest {
     }
     
     @Test
-    public void testPower1() {
+    public void testPower() {
         // setup
         final Parser parser = new ArithParser();
         // test input
-        final String sourceCode = "((5+(2^2))+(5+5))";
+        final String sourceCode = "(2*2)^(2)";
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
-        final Node expectedRoot = new Literal(12);
+        final Node expectedRoot = new Power(new Multiplication(new Literal(2), new Literal(2)), new Literal(2));
         // assertion
-        assertEquals("((5+(2^{2}))+(5+5))", actualRoot.toString());
-    }
-    
-    @Test
-    public void testPower2() {
-        // setup
-        final Parser parser = new ArithParser();
-        // test input
-        final String sourceCode = "((5+2)^2)";
-        // code under test
-        final Node actualRoot = parser.parse(sourceCode);
-        // expected tree
-        final Node expectedRoot = new Literal(12);
-        // assertion
-        assertEquals("((5+2)^{2})", actualRoot.toString());
+        assertEquals("((2*2)^{2})", actualRoot.toString());
     }
     
     @Test
@@ -181,9 +167,9 @@ public class ArithParserTest {
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
-        final Node expectedRoot = new Literal(12);
+        final Node expectedRoot = new Root(new Literal(2), new Addition(new Literal(2), new Literal(2)));
         // assertion
-        assertEquals("(/sqrt[2]{(2+2)})", actualRoot.toString());
+        assertEquals(expectedRoot.toString(), actualRoot.toString());
     }
     
     @Test
@@ -191,31 +177,32 @@ public class ArithParserTest {
         // setup
         final Parser parser = new ArithParser();
         // test input
-        final String sourceCode = "(lim:(x->10):(x+2):)";
+        final String sourceCode = "(lim:(2->2):(2+2):)";
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
-        final Node expectedRoot = new Literal(12);
+        final Node expectedRoot = new Limit(new Addition(new Literal(2), new Literal(2)), new Literal(2), new Literal(2));
         // assertion
-        assertEquals("(/lim_{x/to10}{(x+2)})", actualRoot.toString());
+        assertEquals(expectedRoot.toString(), actualRoot.toString());
     }
     
+    
     @Test
-    public void myTest() {
+    public void AdvancedTest() {
         // setup
         final Parser parser = new ArithParser();
         // test input
-        final String sourceCode = "root:2:(2+2):/(4+4)";
+        final String sourceCode = "(lim:(x->10):((12-2)/(4+4)):)";
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
-        final Node expectedRoot = new Division(new Subtraction(new Literal(12), new Literal(2)), new Addition(new Literal(23), new Literal(12)));
+        final Node expectedRoot = new Limit(new Division(new Subtraction(new Literal(12), new Literal(2)), new Addition(new Literal(4), new Literal(4))), new Variable("x"), new Literal(10));
         // assertion
-        assertEquals("(/frac{(/sqrt[2]{(2+2)})}{(4+4)})", actualRoot.toString());
+        assertEquals(expectedRoot.toString(), actualRoot.toString());
     }
-    
+
     @Test
-    public void myAdvancedTest() {
+    public void AdvancedTest2() {
         // setup
         final Parser parser = new ArithParser();
         // test input
@@ -223,22 +210,9 @@ public class ArithParserTest {
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
-        final Node expectedRoot = new Division(new Subtraction(new Literal(12), new Literal(2)), new Addition(new Literal(23), new Literal(12)));
+        final Node expectedRoot = new Limit(new Division(new Root(new Literal(2), new Addition(new Variable("x"), new Literal(2))), new Addition(new Literal(4), new Literal(4))), new Variable("x"), new Literal(10));
         // assertion
-        assertEquals("(/lim_{x/to10}{(/frac{(/sqrt[2]{(x+2)})}{(4+4)})})", actualRoot.toString());
-    }
-    
-    @Test
-    public void myAdvancedTest2() {
-        // setup
-        final Parser parser = new ArithParser();
-        // test input
-        final String sourceCode = "(lim:(x->10):((5+(2^2))+(5+5)):)";
-        // code under test
-        final Node actualRoot = parser.parse(sourceCode);
-        // expected tree
-        final Node expectedRoot = new Division(new Subtraction(new Literal(12), new Literal(2)), new Addition(new Literal(23), new Literal(12)));
-        // assertion
-        assertEquals("(/lim_{x/to10}{((5+(2^{2}))+(5+5))})", actualRoot.toString());
+        System.out.println(expectedRoot.toString());
+        assertEquals(expectedRoot.toString(), actualRoot.toString());
     }
 }

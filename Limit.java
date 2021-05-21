@@ -1,27 +1,26 @@
-
 /**
- * Write a description of class Limit here.
+ * Conversion of Limits.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Mak Fazlic & Roberto Ferrari - Latex project.
+ * @version v1.0
  */
 public class Limit extends Node
 {
+    // instance variables
     private final Node child;
-    private final Node variable;
-    private final Node value;
+    private final Node from;
+    private final Node to;
 
     /**
-     * Constructor for objects of class Power.
+     * Constructor for objects of class LLimit.
      * @param leftChild expression Node.
      * @param rightChild expression Node.
      */
-    public Limit(final Node child, final Node variable, final Node value)
-    {
+    public Limit(final Node child, final Node from, final Node to){
         super();
         this.child = child;
-        this.variable = variable;
-        this.value = value;
+        this.from = from;
+        this.to = to;
     }
     
     @Override
@@ -30,7 +29,8 @@ public class Limit extends Node
     }
  
     @Override
+    // Returns Latex of Limit
     public String toString() {
-        return "(/lim_{" + variable.toString() + "/to" + value.toString() + "}{" + child.toString() + "})";
+        return "\\lim_{" + from.toString() + "\\to " + to.toString() + "}{" + child.toString() + "}";
     }
 }

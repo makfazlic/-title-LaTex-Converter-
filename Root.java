@@ -1,25 +1,24 @@
 /**
- * Write a description of class Root here.
+ * An Integer Root values.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Mak Fazlic & Roberto Ferrari - Latex project.
+ * @version v1.0
  */
 public class Root extends Node
 {
-    // instance variables - replace the example below with your own
-    private final Node grade;
-    private final Node child;
+    // instance variables
+    private final Node power;
+    private final Node base;
 
     /**
      * Constructor for objects of class Power.
-     * @param leftChild expression Node.
-     * @param rightChild expression Node.
+     * @param power expression Node.
+     * @param base expression Node.
      */
-    public Root(final Node grade, final Node child)
-    {
+    public Root(final Node power, final Node base){
         super();
-        this.grade = grade;
-        this.child = child;       
+        this.power = power;
+        this.base = base;       
     }
     
     @Override
@@ -28,7 +27,8 @@ public class Root extends Node
     }
  
     @Override
+    // Returns Latex of Roots
     public String toString() {
-        return "(/sqrt[" + grade.toString() + "]{" + child.toString() + "})";
+        return "{\\sqrt[" + power.toString() + "]{" + base.toString() + "}}";
     }
 }

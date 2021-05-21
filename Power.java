@@ -2,22 +2,21 @@
 /**
  * An Integer Power
  *
- * @author Roberto Ferrari
- * @version v0.1
+ * @author Mak Fazlic & Roberto Ferrari - Latex project.
+ * @version v1.0
  */
 public class Power extends Node
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private final Node child;
     private final Node exponent;
 
     /**
      * Constructor for objects of class Power.
-     * @param leftChild expression Node.
-     * @param rightChild expression Node.
+     * @param child expression Node.
+     * @param exponent expression Node.
      */
-    public Power(final Node child, final Node exponent)
-    {
+    public Power(final Node child, final Node exponent){
         super();
         this.child = child;
         this.exponent = exponent;
@@ -29,7 +28,8 @@ public class Power extends Node
     }
  
     @Override
+    // Returns Latex of Power
     public String toString() {
-        return "(" + child.toString() + "^{" + exponent.toString() + "})";
+        return "{" + child.toString() + "^{" + exponent.toString() + "}}";
     }
 }

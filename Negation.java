@@ -1,10 +1,13 @@
 /**
  * An integer negation (e.g., -5, or -x).
+ * 
+ * @author Mak Fazlic & Roberto Ferrari - Latex project.
+ * @version v1.0
  */
 public class Negation extends Node {
-    
+
+    // instance variables
     private final Node child;
-    
     
     /**
      * Create a new Negation node.
@@ -21,8 +24,9 @@ public class Negation extends Node {
     }
 
     @Override
+    // Returns Latex of Negation
     public String toString() {
-        return "(-" + child.toString() + ")";
+        return "{(-" + child.toString() + ")}";
     }
     
 }
