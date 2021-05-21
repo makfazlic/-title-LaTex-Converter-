@@ -19,3 +19,10 @@
 
 ## 21th May, Friday
 - Call with the TA to show our progress and clarify some problems
+
+## TO DO
+- Finish the GUI
+- The = sign
+- Create .pdf conversion
+- Write tests 
+- Add the f(x) notation if we have time
