@@ -21,6 +21,15 @@
 - Call with the TA to show our progress and clarify some problems
 - We applied some new features which make the code more robust
 
+## 22th May, Saturday
+- We try to figure out a problem to catch errors when the user digits wrong command
+
+## 23th May, Sunday
+- No progress
+
+## 24th May, Monday
+- Finally we have figured out a way to cacth error when users digit wrong command
+
 ## TO DO
 - Finish the GUI
 - The = sign
