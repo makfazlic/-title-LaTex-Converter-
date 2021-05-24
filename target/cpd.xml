@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd-cpd>
+   <duplication lines="24" tokens="192">
+      <file column="9" endcolumn="32" endline="51" line="28"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <file column="9" endcolumn="42" endline="75" line="52"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <codefragment><![CDATA[        symbols.put("alpha","\\alpha");
+        symbols.put("beta","\\beta");
+        symbols.put("gamma","\\gamma");
+        symbols.put("delta","\\delta");
+        symbols.put("epsilon","\\epsilon");
+        symbols.put("zeta","\\zeta");
+        symbols.put("eta","\\eta");
+        symbols.put("theta","\\theta");
+        symbols.put("iota","\\iota");
+        symbols.put("kappa","\\kappa");
+        symbols.put("lambda","\\lambda");
+        symbols.put("mu","\\mu");
+        symbols.put("nu","\\nu");
+        symbols.put("xi","\\xi");
+        symbols.put("pi","\\pi");
+        symbols.put("rho","\\rho");
+        symbols.put("sigma","\\sigma");
+        symbols.put("tau","\\tau");
+        symbols.put("upsilon","\\upsilon");
+        symbols.put("phi","\\phi");
+        symbols.put("chi","\\chi");
+        symbols.put("psi","\\psi");
+        symbols.put("omega","\\omega");
+        symbols.put("Alpha","A");]]></codefragment>
+   </duplication>
+   <duplication lines="23" tokens="184">
+      <file column="9" endcolumn="38" endline="50" line="28"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <file column="9" endcolumn="42" endline="75" line="53"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <codefragment><![CDATA[        symbols.put("alpha","\\alpha");
+        symbols.put("beta","\\beta");
+        symbols.put("gamma","\\gamma");
+        symbols.put("delta","\\delta");
+        symbols.put("epsilon","\\epsilon");
+        symbols.put("zeta","\\zeta");
+        symbols.put("eta","\\eta");
+        symbols.put("theta","\\theta");
+        symbols.put("iota","\\iota");
+        symbols.put("kappa","\\kappa");
+        symbols.put("lambda","\\lambda");
+        symbols.put("mu","\\mu");
+        symbols.put("nu","\\nu");
+        symbols.put("xi","\\xi");
+        symbols.put("pi","\\pi");
+        symbols.put("rho","\\rho");
+        symbols.put("sigma","\\sigma");
+        symbols.put("tau","\\tau");
+        symbols.put("upsilon","\\upsilon");
+        symbols.put("phi","\\phi");
+        symbols.put("chi","\\chi");
+        symbols.put("psi","\\psi");
+        symbols.put("omega","\\omega");]]></codefragment>
+   </duplication>
+   <duplication lines="22" tokens="176">
+      <file column="9" endcolumn="34" endline="49" line="28"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <file column="9" endcolumn="42" endline="75" line="54"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <codefragment><![CDATA[        symbols.put("alpha","\\alpha");
+        symbols.put("beta","\\beta");
+        symbols.put("gamma","\\gamma");
+        symbols.put("delta","\\delta");
+        symbols.put("epsilon","\\epsilon");
+        symbols.put("zeta","\\zeta");
+        symbols.put("eta","\\eta");
+        symbols.put("theta","\\theta");
+        symbols.put("iota","\\iota");
+        symbols.put("kappa","\\kappa");
+        symbols.put("lambda","\\lambda");
+        symbols.put("mu","\\mu");
+        symbols.put("nu","\\nu");
+        symbols.put("xi","\\xi");
+        symbols.put("pi","\\pi");
+        symbols.put("rho","\\rho");
+        symbols.put("sigma","\\sigma");
+        symbols.put("tau","\\tau");
+        symbols.put("upsilon","\\upsilon");
+        symbols.put("phi","\\phi");
+        symbols.put("chi","\\chi");
+        symbols.put("psi","\\psi");]]></codefragment>
+   </duplication>
+   <duplication lines="21" tokens="168">
+      <file column="9" endcolumn="34" endline="48" line="28"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <file column="9" endcolumn="42" endline="75" line="55"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <codefragment><![CDATA[        symbols.put("alpha","\\alpha");
+        symbols.put("beta","\\beta");
+        symbols.put("gamma","\\gamma");
+        symbols.put("delta","\\delta");
+        symbols.put("epsilon","\\epsilon");
+        symbols.put("zeta","\\zeta");
+        symbols.put("eta","\\eta");
+        symbols.put("theta","\\theta");
+        symbols.put("iota","\\iota");
+        symbols.put("kappa","\\kappa");
+        symbols.put("lambda","\\lambda");
+        symbols.put("mu","\\mu");
+        symbols.put("nu","\\nu");
+        symbols.put("xi","\\xi");
+        symbols.put("pi","\\pi");
+        symbols.put("rho","\\rho");
+        symbols.put("sigma","\\sigma");
+        symbols.put("tau","\\tau");
+        symbols.put("upsilon","\\upsilon");
+        symbols.put("phi","\\phi");
+        symbols.put("chi","\\chi");]]></codefragment>
+   </duplication>
+   <duplication lines="20" tokens="160">
+      <file column="9" endcolumn="34" endline="47" line="28"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <file column="9" endcolumn="42" endline="75" line="56"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <codefragment><![CDATA[        symbols.put("alpha","\\alpha");
+        symbols.put("beta","\\beta");
+        symbols.put("gamma","\\gamma");
+        symbols.put("delta","\\delta");
+        symbols.put("epsilon","\\epsilon");
+        symbols.put("zeta","\\zeta");
+        symbols.put("eta","\\eta");
+        symbols.put("theta","\\theta");
+        symbols.put("iota","\\iota");
+        symbols.put("kappa","\\kappa");
+        symbols.put("lambda","\\lambda");
+        symbols.put("mu","\\mu");
+        symbols.put("nu","\\nu");
+        symbols.put("xi","\\xi");
+        symbols.put("pi","\\pi");
+        symbols.put("rho","\\rho");
+        symbols.put("sigma","\\sigma");
+        symbols.put("tau","\\tau");
+        symbols.put("upsilon","\\upsilon");
+        symbols.put("phi","\\phi");]]></codefragment>
+   </duplication>
+   <duplication lines="31" tokens="152">
+      <file column="9" endcolumn="21" endline="101" line="71"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/ArithParser.java"/>
+      <file column="9" endcolumn="23" endline="138" line="103"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/ArithParser.java"/>
+      <codefragment><![CDATA[        while (lexer.getCurrentToken().getType() == TokenType.PLUS 
+                || lexer.getCurrentToken().getType() == TokenType.MINUS) {
+            if (lexer.getCurrentToken().getType() == TokenType.PLUS) {
+                // do addition if before TERM there's "+"
+                expressionNode = new Addition(expressionNode, this.parseTerm());
+            } else if (lexer.getCurrentToken().getType() == TokenType.MINUS) {
+                // do subtraction if before TERM there's "-"
+                expressionNode = new Subtraction(expressionNode, this.parseTerm());
+            }
+            this.lexer.fetchNextToken();
+            if (lexer.getCurrentToken().getText().equals("^")) {
+                this.lexer.fetchNextToken();
+                expressionNode = new Power(expressionNode, this.parseTerm());
+            }
+        }
+        return expressionNode;
+    }
+    
+    /**
+     * Parse a term.
+     * This assumes the lexer already points to the first token of this term.
+     * 
+     * <p>EBNF:
+     * <code>
+     * TERM ::= FACTOR { ( "*" | "/" ) FACTOR }
+     * </code>
+     * 
+     * @return a Node representing the term
+     */
+    private Node parseTerm() {
+        Node termNode = this.parseFactor();]]></codefragment>
+   </duplication>
+   <duplication lines="19" tokens="152">
+      <file column="9" endcolumn="42" endline="46" line="28"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <file column="9" endcolumn="42" endline="75" line="57"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <codefragment><![CDATA[        symbols.put("alpha","\\alpha");
+        symbols.put("beta","\\beta");
+        symbols.put("gamma","\\gamma");
+        symbols.put("delta","\\delta");
+        symbols.put("epsilon","\\epsilon");
+        symbols.put("zeta","\\zeta");
+        symbols.put("eta","\\eta");
+        symbols.put("theta","\\theta");
+        symbols.put("iota","\\iota");
+        symbols.put("kappa","\\kappa");
+        symbols.put("lambda","\\lambda");
+        symbols.put("mu","\\mu");
+        symbols.put("nu","\\nu");
+        symbols.put("xi","\\xi");
+        symbols.put("pi","\\pi");
+        symbols.put("rho","\\rho");
+        symbols.put("sigma","\\sigma");
+        symbols.put("tau","\\tau");
+        symbols.put("upsilon","\\upsilon");]]></codefragment>
+   </duplication>
+   <duplication lines="18" tokens="144">
+      <file column="9" endcolumn="34" endline="45" line="28"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <file column="9" endcolumn="42" endline="75" line="58"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <codefragment><![CDATA[        symbols.put("alpha","\\alpha");
+        symbols.put("beta","\\beta");
+        symbols.put("gamma","\\gamma");
+        symbols.put("delta","\\delta");
+        symbols.put("epsilon","\\epsilon");
+        symbols.put("zeta","\\zeta");
+        symbols.put("eta","\\eta");
+        symbols.put("theta","\\theta");
+        symbols.put("iota","\\iota");
+        symbols.put("kappa","\\kappa");
+        symbols.put("lambda","\\lambda");
+        symbols.put("mu","\\mu");
+        symbols.put("nu","\\nu");
+        symbols.put("xi","\\xi");
+        symbols.put("pi","\\pi");
+        symbols.put("rho","\\rho");
+        symbols.put("sigma","\\sigma");
+        symbols.put("tau","\\tau");]]></codefragment>
+   </duplication>
+   <duplication lines="17" tokens="136">
+      <file column="9" endcolumn="38" endline="44" line="28"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <file column="9" endcolumn="42" endline="75" line="59"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <codefragment><![CDATA[        symbols.put("alpha","\\alpha");
+        symbols.put("beta","\\beta");
+        symbols.put("gamma","\\gamma");
+        symbols.put("delta","\\delta");
+        symbols.put("epsilon","\\epsilon");
+        symbols.put("zeta","\\zeta");
+        symbols.put("eta","\\eta");
+        symbols.put("theta","\\theta");
+        symbols.put("iota","\\iota");
+        symbols.put("kappa","\\kappa");
+        symbols.put("lambda","\\lambda");
+        symbols.put("mu","\\mu");
+        symbols.put("nu","\\nu");
+        symbols.put("xi","\\xi");
+        symbols.put("pi","\\pi");
+        symbols.put("rho","\\rho");
+        symbols.put("sigma","\\sigma");]]></codefragment>
+   </duplication>
+   <duplication lines="16" tokens="128">
+      <file column="9" endcolumn="34" endline="43" line="28"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <file column="9" endcolumn="42" endline="75" line="60"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <codefragment><![CDATA[        symbols.put("alpha","\\alpha");
+        symbols.put("beta","\\beta");
+        symbols.put("gamma","\\gamma");
+        symbols.put("delta","\\delta");
+        symbols.put("epsilon","\\epsilon");
+        symbols.put("zeta","\\zeta");
+        symbols.put("eta","\\eta");
+        symbols.put("theta","\\theta");
+        symbols.put("iota","\\iota");
+        symbols.put("kappa","\\kappa");
+        symbols.put("lambda","\\lambda");
+        symbols.put("mu","\\mu");
+        symbols.put("nu","\\nu");
+        symbols.put("xi","\\xi");
+        symbols.put("pi","\\pi");
+        symbols.put("rho","\\rho");]]></codefragment>
+   </duplication>
+   <duplication lines="15" tokens="120">
+      <file column="9" endcolumn="32" endline="42" line="28"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <file column="9" endcolumn="42" endline="75" line="61"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <codefragment><![CDATA[        symbols.put("alpha","\\alpha");
+        symbols.put("beta","\\beta");
+        symbols.put("gamma","\\gamma");
+        symbols.put("delta","\\delta");
+        symbols.put("epsilon","\\epsilon");
+        symbols.put("zeta","\\zeta");
+        symbols.put("eta","\\eta");
+        symbols.put("theta","\\theta");
+        symbols.put("iota","\\iota");
+        symbols.put("kappa","\\kappa");
+        symbols.put("lambda","\\lambda");
+        symbols.put("mu","\\mu");
+        symbols.put("nu","\\nu");
+        symbols.put("xi","\\xi");
+        symbols.put("pi","\\pi");]]></codefragment>
+   </duplication>
+   <duplication lines="14" tokens="112">
+      <file column="9" endcolumn="32" endline="41" line="28"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <file column="9" endcolumn="42" endline="75" line="62"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <codefragment><![CDATA[        symbols.put("alpha","\\alpha");
+        symbols.put("beta","\\beta");
+        symbols.put("gamma","\\gamma");
+        symbols.put("delta","\\delta");
+        symbols.put("epsilon","\\epsilon");
+        symbols.put("zeta","\\zeta");
+        symbols.put("eta","\\eta");
+        symbols.put("theta","\\theta");
+        symbols.put("iota","\\iota");
+        symbols.put("kappa","\\kappa");
+        symbols.put("lambda","\\lambda");
+        symbols.put("mu","\\mu");
+        symbols.put("nu","\\nu");
+        symbols.put("xi","\\xi");]]></codefragment>
+   </duplication>
+   <duplication lines="13" tokens="104">
+      <file column="9" endcolumn="32" endline="40" line="28"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <file column="9" endcolumn="42" endline="75" line="63"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <codefragment><![CDATA[        symbols.put("alpha","\\alpha");
+        symbols.put("beta","\\beta");
+        symbols.put("gamma","\\gamma");
+        symbols.put("delta","\\delta");
+        symbols.put("epsilon","\\epsilon");
+        symbols.put("zeta","\\zeta");
+        symbols.put("eta","\\eta");
+        symbols.put("theta","\\theta");
+        symbols.put("iota","\\iota");
+        symbols.put("kappa","\\kappa");
+        symbols.put("lambda","\\lambda");
+        symbols.put("mu","\\mu");
+        symbols.put("nu","\\nu");]]></codefragment>
+   </duplication>
+   <duplication lines="12" tokens="96">
+      <file column="9" endcolumn="32" endline="39" line="28"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <file column="9" endcolumn="42" endline="75" line="64"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <codefragment><![CDATA[        symbols.put("alpha","\\alpha");
+        symbols.put("beta","\\beta");
+        symbols.put("gamma","\\gamma");
+        symbols.put("delta","\\delta");
+        symbols.put("epsilon","\\epsilon");
+        symbols.put("zeta","\\zeta");
+        symbols.put("eta","\\eta");
+        symbols.put("theta","\\theta");
+        symbols.put("iota","\\iota");
+        symbols.put("kappa","\\kappa");
+        symbols.put("lambda","\\lambda");
+        symbols.put("mu","\\mu");]]></codefragment>
+   </duplication>
+   <duplication lines="11" tokens="88">
+      <file column="9" endcolumn="40" endline="38" line="28"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <file column="9" endcolumn="42" endline="75" line="65"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <codefragment><![CDATA[        symbols.put("alpha","\\alpha");
+        symbols.put("beta","\\beta");
+        symbols.put("gamma","\\gamma");
+        symbols.put("delta","\\delta");
+        symbols.put("epsilon","\\epsilon");
+        symbols.put("zeta","\\zeta");
+        symbols.put("eta","\\eta");
+        symbols.put("theta","\\theta");
+        symbols.put("iota","\\iota");
+        symbols.put("kappa","\\kappa");
+        symbols.put("lambda","\\lambda");]]></codefragment>
+   </duplication>
+   <duplication lines="10" tokens="80">
+      <file column="9" endcolumn="38" endline="37" line="28"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <file column="9" endcolumn="42" endline="75" line="66"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <codefragment><![CDATA[        symbols.put("alpha","\\alpha");
+        symbols.put("beta","\\beta");
+        symbols.put("gamma","\\gamma");
+        symbols.put("delta","\\delta");
+        symbols.put("epsilon","\\epsilon");
+        symbols.put("zeta","\\zeta");
+        symbols.put("eta","\\eta");
+        symbols.put("theta","\\theta");
+        symbols.put("iota","\\iota");
+        symbols.put("kappa","\\kappa");]]></codefragment>
+   </duplication>
+   <duplication lines="9" tokens="72">
+      <file column="9" endcolumn="36" endline="36" line="28"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <file column="9" endcolumn="42" endline="75" line="67"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <codefragment><![CDATA[        symbols.put("alpha","\\alpha");
+        symbols.put("beta","\\beta");
+        symbols.put("gamma","\\gamma");
+        symbols.put("delta","\\delta");
+        symbols.put("epsilon","\\epsilon");
+        symbols.put("zeta","\\zeta");
+        symbols.put("eta","\\eta");
+        symbols.put("theta","\\theta");
+        symbols.put("iota","\\iota");]]></codefragment>
+   </duplication>
+   <duplication lines="18" tokens="65">
+      <file column="20" endcolumn="1" endline="35" line="18"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Addition.java"/>
+      <file column="20" endcolumn="1" endline="34" line="18"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Division.java"/>
+      <file column="26" endcolumn="1" endline="35" line="19"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Multiplication.java"/>
+      <file column="17" endcolumn="1" endline="35" line="19"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Power.java"/>
+      <file column="16" endcolumn="1" endline="34" line="18"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Root.java"/>
+      <file column="23" endcolumn="1" endline="35" line="18"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Subtraction.java"/>
+      <codefragment><![CDATA[    public Addition(final Node leftChild, final Node rightChild) {
+        super();
+        this.leftChild = leftChild;
+        this.rightChild = rightChild;
+    }
+
+    @Override
+    public Type getType() {
+        return Type.INT;
+    }
+ 
+    @Override
+    // Returns Latex of Addition
+    public String toString() {
+        return "{\\left(" + leftChild.toString() + "+" + rightChild.toString() + "\\right)}";
+    }
+    
+}]]></codefragment>
+   </duplication>
+   <duplication lines="8" tokens="64">
+      <file column="9" endcolumn="38" endline="35" line="28"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <file column="9" endcolumn="42" endline="75" line="68"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/Variable.java"/>
+      <codefragment><![CDATA[        symbols.put("alpha","\\alpha");
+        symbols.put("beta","\\beta");
+        symbols.put("gamma","\\gamma");
+        symbols.put("delta","\\delta");
+        symbols.put("epsilon","\\epsilon");
+        symbols.put("zeta","\\zeta");
+        symbols.put("eta","\\eta");
+        symbols.put("theta","\\theta");]]></codefragment>
+   </duplication>
+   <duplication lines="6" tokens="61">
+      <file column="9" endcolumn="30" endline="43" line="38"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/DemoParser.java"/>
+      <file column="9" endcolumn="30" endline="63" line="58"
+            path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/DemoParser.java"/>
+      <codefragment><![CDATA[        if (lexer.getCurrentToken().getType() != TokenType.LITERAL) {
+            System.out.println("Expected a LITERAL, got " + lexer.getCurrentToken());
+            return null;
+        }
+        final Node left = new Literal(Integer.parseInt(lexer.getCurrentToken().getText()));
+        lexer.fetchNextToken();]]></codefragment>
+   </duplication>
+</pmd-cpd>
