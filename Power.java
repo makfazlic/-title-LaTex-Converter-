@@ -16,7 +16,7 @@ public class Power extends Node
      * @param child expression Node.
      * @param exponent expression Node.
      */
-    public Power(final Node child, final Node exponent){
+    public Power(final Node child, final Node exponent) {
         super();
         this.child = child;
         this.exponent = exponent;

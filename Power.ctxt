@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=Power
-comment0.text=\n\ An\ Integer\ Power\n\n\ @author\ Roberto\ Ferrari\n\ @version\ v0.1\n
+comment0.text=\n\ An\ Integer\ Power\n\n\ @author\ Mak\ Fazlic\ &\ Roberto\ Ferrari\ -\ Latex\ project.\n\ @version\ v1.0\n
 comment1.params=child\ exponent
 comment1.target=Power(Node,\ Node)
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Power.\n\ @param\ leftChild\ expression\ Node.\n\ @param\ rightChild\ expression\ Node.\n
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Power.\n\ @param\ child\ expression\ Node.\n\ @param\ exponent\ expression\ Node.\n
 comment2.params=
 comment2.target=Type\ getType()
 comment3.params=

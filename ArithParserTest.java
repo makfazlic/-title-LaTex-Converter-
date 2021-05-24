@@ -155,7 +155,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Power(new Multiplication(new Literal(2), new Literal(2)), new Literal(2));
         // assertion
-        assertEquals("((2*2)^{2})", actualRoot.toString());
+        assertEquals(expectedRoot.toString(), actualRoot.toString());
     }
     
     @Test
