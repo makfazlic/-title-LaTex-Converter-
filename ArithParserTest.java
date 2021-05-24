@@ -121,11 +121,11 @@ public class ArithParserTest{
         // setup
         final Parser parser = new ArithParser();
         // test input
-        final String sourceCode = "12/2";
+        final String sourceCode = "root:(2):(2+2):/(4+4)";
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
-        final Node expectedRoot = new Division(new Literal(12), new Literal(2));
+        final Node expectedRoot = new Division(new Root(new Literal(2), new Addition(new Literal(2), new Literal(2))), new Addition(new Literal(4), new Literal(4)));
         // assertion
         assertEquals(expectedRoot.toString(), actualRoot.toString());
     }
@@ -163,7 +163,7 @@ public class ArithParserTest{
         // setup
         final Parser parser = new ArithParser();
         // test input
-        final String sourceCode = "(root:2:(2+2):)";
+        final String sourceCode = "root:(2):(2+2):";
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
@@ -177,11 +177,11 @@ public class ArithParserTest{
         // setup
         final Parser parser = new ArithParser();
         // test input
-        final String sourceCode = "(lim:(2,2):(2+2):)";
+        final String sourceCode = "(lim:(x,2):(2+2):)";
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
-        final Node expectedRoot = new Limit(new Addition(new Literal(2), new Literal(2)), new Literal(2), new Literal(2));
+        final Node expectedRoot = new Limit(new Addition(new Literal(2), new Literal(2)), new Variable("x"), new Literal(2));
         // assertion
         assertEquals(expectedRoot.toString(), actualRoot.toString());
     }
@@ -206,7 +206,7 @@ public class ArithParserTest{
         // setup
         final Parser parser = new ArithParser();
         // test input
-        final String sourceCode = "(lim:(x,10):(root:2:(x+2):/(4+4)):)";
+        final String sourceCode = "lim:(x,10):((root:(2):(x+2):)/(4+4)):";
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
@@ -234,13 +234,27 @@ public class ArithParserTest{
         // setup
         final Parser parser = new ArithParser();
         // test input
-        final String sourceCode = "root:2((x+2):";
+        final String sourceCode = "root:2,(x+2):";
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
         final Node expectedRoot = new Limit(new Division(new Root(new Literal(2), new Addition(new Variable("x"), new Literal(2))), new Addition(new Literal(4), new Literal(4))), new Variable("x"), new Literal(10));
         // assertion
         assertEquals("The body of the root and the grade must be separated by a colon", actualRoot.toString());
+    }
+    
+    @Test
+    public void testRootError3() {
+        // setup
+        final Parser parser = new ArithParser();
+        // test input
+        final String sourceCode = "(root:(2):(x+2))";
+        // code under test
+        final Node actualRoot = parser.parse(sourceCode);
+        // expected tree
+        final Node expectedRoot = new Limit(new Division(new Root(new Literal(2), new Addition(new Variable("x"), new Literal(2))), new Addition(new Literal(4), new Literal(4))), new Variable("x"), new Literal(10));
+        // assertion
+        assertEquals("You must close the root operation with a colon", actualRoot.toString());
     }
     
     @Test
@@ -283,5 +297,19 @@ public class ArithParserTest{
         final Node expectedRoot = new Limit(new Addition(new Literal(2), new Literal(2)), new Literal(2), new Literal(2));
         // assertion
         assertEquals("The body of the limit and the variable section must be separated by a colon", actualRoot.toString());
+    }
+    
+    @Test
+    public void testLimitError4() {
+        // setup
+        final Parser parser = new ArithParser();
+        // test input
+        final String sourceCode = "(lim:(2,2):(2+2))";
+        // code under test
+        final Node actualRoot = parser.parse(sourceCode);
+        // expected tree
+        final Node expectedRoot = new Limit(new Addition(new Literal(2), new Literal(2)), new Literal(2), new Literal(2));
+        // assertion
+        assertEquals("You must close the limit operation with a colon", actualRoot.toString());
     }
 }

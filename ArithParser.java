@@ -27,7 +27,8 @@ public final class ArithParser implements Parser {
         // fetch first token
         lexer.fetchNextToken();
         // now parse the EXPRESSION
-        Node expression = parseExpression();        
+        Node expression = parseExpression();
+        // if the errorString is empty there aren't errors
         if (this.errorString.isEmpty()) {
             return expression;
         } else {
@@ -173,11 +174,13 @@ public final class ArithParser implements Parser {
         this.lexer.fetchNextToken();
         // set limit value
         final Node value = this.creationLimitValue();
-        this.lexer.fetchNextToken();       
         this.lexer.fetchNextToken();
         // create the limit
         final Node limitNode = this.creationLimit(variable, value);
-        this.lexer.fetchNextToken();
+        // check if the user close the limit with a colon
+        if (!this.tokenAnalyzer(":") && this.errorString.isEmpty()) {
+            this.errorString = "You must close the limit operation with a colon";
+        }
         return limitNode;
     }
     
@@ -187,7 +190,10 @@ public final class ArithParser implements Parser {
         this.lexer.fetchNextToken();
         // create the root
         final Node rootNode = this.creationRoot(grade);
-        this.lexer.fetchNextToken();
+        // check if the user close the root with a colon
+        if (!this.tokenAnalyzer(":") && this.errorString.isEmpty()) {
+            this.errorString = "You must close the root operation with a colon";
+        }
         return rootNode;
     }
     
@@ -197,16 +203,16 @@ public final class ArithParser implements Parser {
     
     public Node creationRootGrade() {
         // check if there is a colon after the word 'root'
-        if (!this.tokenAnalyzer(":")) {
+        if (!this.tokenAnalyzer(":") && this.errorString.isEmpty()) {
             this.errorString = "You must to start with colon after 'root' word";
         }
         this.lexer.fetchNextToken();
-        return new Literal(Integer.parseInt(lexer.getCurrentToken().getText()));
+        return this.parseExpression();
     }
     
     public Node creationRoot(Node grade) {
         // check if there is a colon between the grade and the body of the root
-        if (!this.tokenAnalyzer(":")) {
+        if (!this.tokenAnalyzer(":") && this.errorString.isEmpty()) {
             this.errorString = "The body of the root and the grade must be separated by a colon";
         }
         this.lexer.fetchNextToken();
@@ -215,7 +221,7 @@ public final class ArithParser implements Parser {
     
     public Node creationLimitVariable() {
         // check if there is a colon after the word 'lim'
-        if (!this.tokenAnalyzer(":")) {
+        if (!this.tokenAnalyzer(":") && this.errorString.isEmpty()) {
             this.errorString = "You must to start with colon after 'lim' word";
         }
         this.lexer.fetchNextToken();
@@ -225,16 +231,16 @@ public final class ArithParser implements Parser {
     
     public Node creationLimitValue() {
         // check if there is a comma which separate the variable and the value
-        if (!this.tokenAnalyzer(",")) {
+        if (!this.tokenAnalyzer(",") && this.errorString.isEmpty()) {
             this.errorString = "Put a comma between the variable and the variable value";
         }
         this.lexer.fetchNextToken();
-        return new Literal(Integer.parseInt(lexer.getCurrentToken().getText()));
+        return this.parseExpression();
     }
     
     public Node creationLimit(Node variable, Node value) {
         // check if there is a colon which separate the variable section and the body of the limit
-        if (!this.tokenAnalyzer(":")) {
+        if (!this.tokenAnalyzer(":") && this.errorString.isEmpty()) {
             this.errorString = "The body of the limit and the variable section must be separated by a colon";
         }
         this.lexer.fetchNextToken();
