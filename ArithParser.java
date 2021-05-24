@@ -13,6 +13,7 @@
 public final class ArithParser implements Parser {
     
     private LexicalAnalyzer lexer;
+    private String errorString;
 
     
     /**
@@ -22,10 +23,16 @@ public final class ArithParser implements Parser {
      */
     public Node parse(final String sourceCode) {
         this.lexer = new LexicalAnalyzer(sourceCode);
+        this.errorString = "";
         // fetch first token
         lexer.fetchNextToken();
         // now parse the EXPRESSION
-        return parseExpression();
+        Node expression = parseExpression();        
+        if (this.errorString.isEmpty()) {
+            return expression;
+        } else {
+            return new Error(this.errorString);
+        }
     }
     
     /**
@@ -161,70 +168,55 @@ public final class ArithParser implements Parser {
     }
 
     public Node limitParser() {
-        Node limitNode;
+        final Node limitNode;
         final Node variable;
         final Node value;
         // check if the user used ":" after the limit
-        if (this.tokenAnalyzer(":")) {
-            this.lexer.fetchNextToken();
-            this.lexer.fetchNextToken();
-            // limit variable
-            variable = new Variable(lexer.getCurrentToken().getText());
-        } else {
-            // TODO
-            // Exception wrong token
-            variable = null;
+        if (!this.tokenAnalyzer(":")) {
+            this.errorString = "You must to start with colon after 'lim' word";
         }
+        this.lexer.fetchNextToken();
+        this.lexer.fetchNextToken();
+        // limit variable
+        variable = new Variable(lexer.getCurrentToken().getText());
         this.lexer.fetchNextToken();
         // check if the user used "," between variable and value
-        if (this.tokenAnalyzer(",")) {
-            this.lexer.fetchNextToken();
-            // limit variable
-            value = new Literal(Integer.parseInt(lexer.getCurrentToken().getText()));
-            this.lexer.fetchNextToken();
-        } else {
-            // TODO
-            // Exception wrong token
-            value = null;
-        }        
+        if (!this.tokenAnalyzer(",")) {
+            this.errorString = "Put a comma between the variable section and the body of the limit";
+        }
+        this.lexer.fetchNextToken();
+        // limit variable
+        value = new Literal(Integer.parseInt(lexer.getCurrentToken().getText()));
+        this.lexer.fetchNextToken();       
         this.lexer.fetchNextToken();
         // check if the user used ":" between variable declaration and the body of the limit
-        if (this.tokenAnalyzer(":")) {
-            //creation limit
-            limitNode = new Limit(this.parseExpression(), variable, value);
-        } else {
-            // TODO
-            // Exception wrong token
-            limitNode = null;
+        if (!this.tokenAnalyzer(":")) {
+            this.errorString = "The body of the limit must terminate with a colon";
         }
-
+        //creation limit
+        this.lexer.fetchNextToken();
+        limitNode = new Limit(this.parseExpression(), variable, value);
         this.lexer.fetchNextToken();
         return limitNode;
     }
     
     public Node rootParser() {
-        Node rootNode;
+        final Node rootNode;
         final Node grade;
         // check if the user used ":" after the root
-        if (this.tokenAnalyzer(":")) {
-            this.lexer.fetchNextToken();
-            grade = new Literal(Integer.parseInt(lexer.getCurrentToken().getText()));
-        } else {
-            // TODO
-            // Exception wrong token
-            grade = null;
-        }        
+        if (!this.tokenAnalyzer(":")) {
+            this.errorString = "You must to start with colon after 'root' word";
+        }
+        this.lexer.fetchNextToken();
+        grade = new Literal(Integer.parseInt(lexer.getCurrentToken().getText()));
         this.lexer.fetchNextToken();
         // check if the user used ":" between the grade of the root and its body
-        if (this.tokenAnalyzer(":")) {
-            // creation root
-            rootNode = new Root(grade, this.parseExpression());
-        } else {
-            // TODO
-            // Exception wrong token
-            rootNode = null;
+        if (!this.tokenAnalyzer(":")) {
+            this.errorString = "The body of the root must terminate with a colon";
         }
-        
+        // creation root
+        this.lexer.fetchNextToken();
+        rootNode = new Root(grade, this.parseExpression());
         this.lexer.fetchNextToken();
         return rootNode;
     }

@@ -215,4 +215,19 @@ public class ArithParserTest{
         System.out.println(expectedRoot.toString());
         assertEquals(expectedRoot.toString(), actualRoot.toString());
     }
+    
+    @Test
+    public void errorTest() {
+        // setup
+        final Parser parser = new ArithParser();
+        // test input
+        final String sourceCode = "root(2:(x+2):";
+        // code under test
+        final Node actualRoot = parser.parse(sourceCode);
+        // expected tree
+        final Node expectedRoot = new Limit(new Division(new Root(new Literal(2), new Addition(new Variable("x"), new Literal(2))), new Addition(new Literal(4), new Literal(4))), new Variable("x"), new Literal(10));
+        // assertion
+        System.out.println(expectedRoot.toString());
+        assertEquals("You must to start with colon after 'root' word", actualRoot.toString());
+    }
 }
