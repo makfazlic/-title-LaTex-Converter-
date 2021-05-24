@@ -212,12 +212,11 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Limit(new Division(new Root(new Literal(2), new Addition(new Variable("x"), new Literal(2))), new Addition(new Literal(4), new Literal(4))), new Variable("x"), new Literal(10));
         // assertion
-        System.out.println(expectedRoot.toString());
         assertEquals(expectedRoot.toString(), actualRoot.toString());
     }
     
     @Test
-    public void errorTest() {
+    public void testRootError1() {
         // setup
         final Parser parser = new ArithParser();
         // test input
@@ -227,7 +226,62 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Limit(new Division(new Root(new Literal(2), new Addition(new Variable("x"), new Literal(2))), new Addition(new Literal(4), new Literal(4))), new Variable("x"), new Literal(10));
         // assertion
-        System.out.println(expectedRoot.toString());
         assertEquals("You must to start with colon after 'root' word", actualRoot.toString());
+    }
+    
+    @Test
+    public void testRootError2() {
+        // setup
+        final Parser parser = new ArithParser();
+        // test input
+        final String sourceCode = "root:2((x+2):";
+        // code under test
+        final Node actualRoot = parser.parse(sourceCode);
+        // expected tree
+        final Node expectedRoot = new Limit(new Division(new Root(new Literal(2), new Addition(new Variable("x"), new Literal(2))), new Addition(new Literal(4), new Literal(4))), new Variable("x"), new Literal(10));
+        // assertion
+        assertEquals("The body of the root and the grade must be separated by a colon", actualRoot.toString());
+    }
+    
+    @Test
+    public void testLimitError1() {
+        // setup
+        final Parser parser = new ArithParser();
+        // test input
+        final String sourceCode = "(lim,(2,2):(2+2):)";
+        // code under test
+        final Node actualRoot = parser.parse(sourceCode);
+        // expected tree
+        final Node expectedRoot = new Limit(new Addition(new Literal(2), new Literal(2)), new Literal(2), new Literal(2));
+        // assertion
+        assertEquals("You must to start with colon after 'lim' word", actualRoot.toString());
+    }
+    
+    @Test
+    public void testLimitError2() {
+        // setup
+        final Parser parser = new ArithParser();
+        // test input
+        final String sourceCode = "(lim:(2-2):(2+2):)";
+        // code under test
+        final Node actualRoot = parser.parse(sourceCode);
+        // expected tree
+        final Node expectedRoot = new Limit(new Addition(new Literal(2), new Literal(2)), new Literal(2), new Literal(2));
+        // assertion
+        assertEquals("Put a comma between the variable and the variable value", actualRoot.toString());
+    }
+    
+    @Test
+    public void testLimitError3() {
+        // setup
+        final Parser parser = new ArithParser();
+        // test input
+        final String sourceCode = "(lim:(2,2),(2+2):)";
+        // code under test
+        final Node actualRoot = parser.parse(sourceCode);
+        // expected tree
+        final Node expectedRoot = new Limit(new Addition(new Literal(2), new Literal(2)), new Literal(2), new Literal(2));
+        // assertion
+        assertEquals("The body of the limit and the variable section must be separated by a colon", actualRoot.toString());
     }
 }
