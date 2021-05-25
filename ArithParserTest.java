@@ -107,11 +107,11 @@ public class ArithParserTest{
         // setup
         final Parser parser = new ArithParser();
         // test input
-        final String sourceCode = "12*2";
+        final String sourceCode = "root:(2):(2+2):*(4+4)";
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
-        final Node expectedRoot = new Multiplication(new Literal(12), new Literal(2));
+        final Node expectedRoot = new Multiplication(new Root(new Literal(2), new Addition(new Literal(2), new Literal(2))), new Addition(new Literal(4), new Literal(4)));
         // assertion
         assertEquals(expectedRoot.toString(), actualRoot.toString());
     }
@@ -121,7 +121,7 @@ public class ArithParserTest{
         // setup
         final Parser parser = new ArithParser();
         // test input
-        final String sourceCode = "root:(2):(2+2):/(4+4)";
+        final String sourceCode = "(root:(2):(2+2):/(4+4))";
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
@@ -177,7 +177,7 @@ public class ArithParserTest{
         // setup
         final Parser parser = new ArithParser();
         // test input
-        final String sourceCode = "(lim:(x,2):(2+2):)";
+        final String sourceCode = "lim:(x,2):(2+2):";
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
@@ -192,7 +192,7 @@ public class ArithParserTest{
         // setup
         final Parser parser = new ArithParser();
         // test input
-        final String sourceCode = "(lim:(x,10):((12-2)/(4+4)):)";
+        final String sourceCode = "lim:(x,10):((12-2)/(4+4)):";
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
@@ -206,7 +206,7 @@ public class ArithParserTest{
         // setup
         final Parser parser = new ArithParser();
         // test input
-        final String sourceCode = "lim:(x,10):((root:(2):(x+2):)/(4+4)):";
+        final String sourceCode = "lim:(x,10):(root:(2):(x+2):/(4+4)):";
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
@@ -248,7 +248,7 @@ public class ArithParserTest{
         // setup
         final Parser parser = new ArithParser();
         // test input
-        final String sourceCode = "(root:(2):(x+2))";
+        final String sourceCode = "root:(2):(x+2))";
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
@@ -262,7 +262,7 @@ public class ArithParserTest{
         // setup
         final Parser parser = new ArithParser();
         // test input
-        final String sourceCode = "(lim,(2,2):(2+2):)";
+        final String sourceCode = "lim,(2,2):(2+2):";
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
@@ -276,7 +276,7 @@ public class ArithParserTest{
         // setup
         final Parser parser = new ArithParser();
         // test input
-        final String sourceCode = "(lim:(2-2):(2+2):)";
+        final String sourceCode = "lim:(2-2):(2+2):";
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
@@ -290,7 +290,7 @@ public class ArithParserTest{
         // setup
         final Parser parser = new ArithParser();
         // test input
-        final String sourceCode = "(lim:(2,2),(2+2):)";
+        final String sourceCode = "lim:(2,2),(2+2):";
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
@@ -304,7 +304,7 @@ public class ArithParserTest{
         // setup
         final Parser parser = new ArithParser();
         // test input
-        final String sourceCode = "(lim:(2,2):(2+2))";
+        final String sourceCode = "lim:(2,2):(2+2)";
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree

@@ -178,9 +178,10 @@ public final class ArithParser implements Parser {
         // create the limit
         final Node limitNode = this.creationLimit(variable, value);
         // check if the user close the limit with a colon
-        if (!this.tokenAnalyzer(":") && this.errorString.isEmpty()) {
+        if (!this.tokenAnalyzer(":") && this.errorString.isEmpty()) {     
             this.errorString = "You must close the limit operation with a colon";
         }
+        this.lexer.fetchNextToken();
         return limitNode;
     }
     
@@ -194,6 +195,7 @@ public final class ArithParser implements Parser {
         if (!this.tokenAnalyzer(":") && this.errorString.isEmpty()) {
             this.errorString = "You must close the root operation with a colon";
         }
+        this.lexer.fetchNextToken();
         return rootNode;
     }
     
@@ -234,7 +236,7 @@ public final class ArithParser implements Parser {
         if (!this.tokenAnalyzer(",") && this.errorString.isEmpty()) {
             this.errorString = "Put a comma between the variable and the variable value";
         }
-        this.lexer.fetchNextToken();
+        this.lexer.fetchNextToken();        
         return this.parseExpression();
     }
     
