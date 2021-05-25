@@ -10,6 +10,8 @@ comment11.params=
 comment11.target=Node\ creationLimitValue()
 comment12.params=variable\ value
 comment12.target=Node\ creationLimit(Node,\ Node)
+comment13.params=expectedToken\ errorMessage
+comment13.target=void\ parseError(java.lang.String,\ java.lang.String)
 comment2.params=
 comment2.target=Node\ parseExpression()
 comment2.text=\n\ Parse\ an\ expression.\n\ This\ assumes\ the\ lexer\ already\ points\ to\ the\ first\ token\ of\ this\ expression.\n\ \n\ <p>EBNF\:\n\ <code>\n\ EXPRESSION\ \:\:\=\ [\ "+"\ |\ "-"\ ]\ TERM\ {\ (\ "+"\ |\ "-"\ )\ TERM\ }\n\ </code>\n\ \n\ @return\ a\ Node\ representing\ the\ expression\n
@@ -29,4 +31,4 @@ comment8.params=
 comment8.target=Node\ creationRootGrade()
 comment9.params=grade
 comment9.target=Node\ creationRoot(Node)
-numComments=13
+numComments=14
