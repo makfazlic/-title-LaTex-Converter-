@@ -30,6 +30,9 @@
 ## 24th May, Monday
 - Finally we have figured out a way to cacth error when users digit wrong command
 
+## 25th May, Tuesday
+- We fixed some bugs about the errors handling and we added other tests to cover all the possibilities
+
 ## TO DO
 - Finish the GUI
 - The = sign
