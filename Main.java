@@ -2,10 +2,10 @@ import java.awt.EventQueue;
 
 
 /**
- * Write a description of class main here.
+ * Main function to be ran upon execution.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Mak Fazlic & Roberto Ferrari - Latex project.
+ * @version v1.0
  */
 public class Main
 {
