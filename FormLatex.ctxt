@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=FormLatex
+comment0.text=\n\ Write\ a\ description\ of\ class\ FormLatex\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=middle
+comment1.target=FormLatex(java.lang.String)
+comment2.params=commands
+comment2.target=java.lang.String\ form(java.util.ArrayList)
+numComments=3
