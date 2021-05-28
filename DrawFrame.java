@@ -19,7 +19,7 @@ public class DrawFrame extends JFrame
     /**
      * Constructor for objects of class DrawFrame
      */
-    public DrawFrame(Function funct)
+    public DrawFrame(final Function funct)
     {
         super();
         setTitle("Expression to Latex converter");
@@ -43,7 +43,7 @@ public class DrawFrame extends JFrame
         add(panel, BorderLayout.NORTH);
 
         
-        JLabel label = new JLabel(funct.getExpression(), SwingConstants.CENTER);
+        final JLabel label = new JLabel(funct.getExpression(), SwingConstants.CENTER);
         label.setIcon(new ImageIcon("Background.jpg"));
         label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -54,7 +54,7 @@ public class DrawFrame extends JFrame
         add(label, BorderLayout.CENTER);
         
         
-        JLabel counter = new JLabel(funct.getExpression(), SwingConstants.CENTER);
+        final JLabel counter = new JLabel(funct.getExpression(), SwingConstants.CENTER);
         add(counter, BorderLayout.SOUTH);
         convert.addActionListener(new ActionListener() { 
             public void actionPerformed(final ActionEvent e) {

@@ -61,7 +61,7 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="LiteralTokenFactoryTest" name="testNoMatchNotFound" time="0"/>
+  <testcase classname="LiteralTokenFactoryTest" name="testNoMatchNotFound" time="0.001"/>
   <testcase classname="LiteralTokenFactoryTest" name="testFoundLength1" time="0.001"/>
-  <testcase classname="LiteralTokenFactoryTest" name="testFoundLength3" time="0.002"/>
+  <testcase classname="LiteralTokenFactoryTest" name="testFoundLength3" time="0.001"/>
 </testsuite>

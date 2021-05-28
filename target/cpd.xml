@@ -141,9 +141,9 @@
         symbols.put("phi","\\phi");]]></codefragment>
    </duplication>
    <duplication lines="31" tokens="152">
-      <file column="9" endcolumn="21" endline="101" line="71"
+      <file column="9" endcolumn="21" endline="102" line="72"
             path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/ArithParser.java"/>
-      <file column="9" endcolumn="23" endline="138" line="103"
+      <file column="9" endcolumn="23" endline="139" line="104"
             path="/home/ferro44/Desktop/project-latex-ferrari-fazlic/ArithParser.java"/>
       <codefragment><![CDATA[        while (lexer.getCurrentToken().getType() == TokenType.PLUS 
                 || lexer.getCurrentToken().getType() == TokenType.MINUS) {

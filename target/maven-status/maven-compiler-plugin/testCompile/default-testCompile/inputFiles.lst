@@ -1,3 +1,4 @@
+/home/ferro44/Desktop/project-latex-ferrari-fazlic/DrawFrame.java
 /home/ferro44/Desktop/project-latex-ferrari-fazlic/Subtraction.java
 /home/ferro44/Desktop/project-latex-ferrari-fazlic/StringTokenFactoryTest.java
 /home/ferro44/Desktop/project-latex-ferrari-fazlic/LexicalAnalyzer.java
@@ -5,12 +6,14 @@
 /home/ferro44/Desktop/project-latex-ferrari-fazlic/LiteralTokenFactoryTest.java
 /home/ferro44/Desktop/project-latex-ferrari-fazlic/Node.java
 /home/ferro44/Desktop/project-latex-ferrari-fazlic/LiteralTokenFactory.java
+/home/ferro44/Desktop/project-latex-ferrari-fazlic/Main.java
 /home/ferro44/Desktop/project-latex-ferrari-fazlic/DemoParser.java
 /home/ferro44/Desktop/project-latex-ferrari-fazlic/Parser.java
 /home/ferro44/Desktop/project-latex-ferrari-fazlic/TokenFactory.java
 /home/ferro44/Desktop/project-latex-ferrari-fazlic/Limit.java
 /home/ferro44/Desktop/project-latex-ferrari-fazlic/Demo.java
 /home/ferro44/Desktop/project-latex-ferrari-fazlic/Power.java
+/home/ferro44/Desktop/project-latex-ferrari-fazlic/FormLatex.java
 /home/ferro44/Desktop/project-latex-ferrari-fazlic/TokenType.java
 /home/ferro44/Desktop/project-latex-ferrari-fazlic/IdentifierTokenFactoryTest.java
 /home/ferro44/Desktop/project-latex-ferrari-fazlic/RegExTokenFactoryTest.java
@@ -30,5 +33,6 @@
 /home/ferro44/Desktop/project-latex-ferrari-fazlic/RegExTokenFactory.java
 /home/ferro44/Desktop/project-latex-ferrari-fazlic/ArithParser.java
 /home/ferro44/Desktop/project-latex-ferrari-fazlic/Error.java
+/home/ferro44/Desktop/project-latex-ferrari-fazlic/Function.java
 /home/ferro44/Desktop/project-latex-ferrari-fazlic/IdentifierTokenFactory.java
 /home/ferro44/Desktop/project-latex-ferrari-fazlic/Negation.java
