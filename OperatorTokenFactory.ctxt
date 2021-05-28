@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=OperatorTokenFactory
-comment0.text=\n\ A\ special\ kind\ of\ StringTokenFactory,\n\ which\ produces\ tokens\ that\ represent\ operators.\n
-comment1.params=operator\ tokenType
-comment1.target=OperatorTokenFactory(java.lang.String,\ TokenType)
-comment1.text=\n\ Create\ an\ OperatorTokenFactory\ for\ tokens\ representing\ the\ given\ operator.\n\ @param\ operator\ the\ operator\n\ @param\ tokenType\ the\ TokenType\ corresponding\ to\ this\ operator\n
-comment2.params=
-comment2.target=Token\ getToken()
-numComments=3

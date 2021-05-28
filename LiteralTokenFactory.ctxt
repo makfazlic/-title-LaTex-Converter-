@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=LiteralTokenFactory
-comment0.text=\n\ A\ special\ kind\ of\ RegExTokenFactory\ that\ produces\ tokens\n\ that\ are\ integer\ literals.\n
-comment1.params=
-comment1.target=LiteralTokenFactory()
-comment1.text=\n\ Create\ a\ new\ LiteralTokenFactory.\n
-comment2.params=
-comment2.target=Token\ getToken()
-numComments=3
