@@ -23,7 +23,7 @@
 
 ## 22th May, Saturday
 - We try to figure out a problem to catch errors when the user digits wrong command
-
+garbage
 ## 23th May, Sunday
 - No progress
 
@@ -33,9 +33,18 @@
 ## 25th May, Tuesday
 - We fixed some bugs about the errors handling and we added other tests to cover all the possibilities
 
+## 26th May, Wednesday
+- No progress
+
+## 27th May, Thursday
+- We finally finished tu build the GUI
+- We were finding a way to convert the .tex file that we create in a PDF file
+- We started to work on the possibility to do equations and add string on our .tex file
+
+## 28th May, Friday
+- We eliminated some unecessary files from the repository and copied other file for all Maven tests
+
 ## TO DO
-- Finish the GUI
 - The = sign
 - Create .pdf conversion
 - Write tests 
-- Add the f(x) notation if we have time
