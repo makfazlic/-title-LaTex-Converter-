@@ -145,7 +145,7 @@ public class ArithParserTest{
     }
     
     @Test
-    public void testPower() {
+    public void testPowerMultiplication() {
         // setup
         final Parser parser = new ArithParser();
         // test input
@@ -154,6 +154,34 @@ public class ArithParserTest{
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
         final Node expectedRoot = new Power(new Multiplication(new Literal(2), new Literal(2)), new Literal(2));
+        // assertion
+        assertEquals(expectedRoot.toString(), actualRoot.toString());
+    }
+    
+    @Test
+    public void testPowerLiteral() {
+        // setup
+        final Parser parser = new ArithParser();
+        // test input
+        final String sourceCode = "2^2";
+        // code under test
+        final Node actualRoot = parser.parse(sourceCode);
+        // expected tree
+        final Node expectedRoot = new Power(new Literal(2), new Literal(2));
+        // assertion
+        assertEquals(expectedRoot.toString(), actualRoot.toString());
+    }
+    
+    @Test
+    public void testPowerAddition() {
+        // setup
+        final Parser parser = new ArithParser();
+        // test input
+        final String sourceCode = "(2+2)^(2)";
+        // code under test
+        final Node actualRoot = parser.parse(sourceCode);
+        // expected tree
+        final Node expectedRoot = new Power(new Addition(new Literal(2), new Literal(2)), new Literal(2));
         // assertion
         assertEquals(expectedRoot.toString(), actualRoot.toString());
     }
