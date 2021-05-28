@@ -18,11 +18,6 @@ public class Error extends Node {
         super();
         this.errorMessage = errorMessage;
     }
-
-    @Override
-    public Type getType() {
-        return Type.INT;
-    }
  
     @Override
     // Returns Latex of Addition

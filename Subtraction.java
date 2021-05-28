@@ -22,11 +22,6 @@ public class Subtraction extends Node {
     }
 
     @Override
-    public Type getType() {
-        return Type.INT;
-    }
-
-    @Override
     // Returns Latex of Subtraction
     public String toString() {
         return "{\\left(" + leftChild.toString() + "-" + rightChild.toString() + "\\right)}";

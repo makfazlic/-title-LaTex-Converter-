@@ -20,11 +20,6 @@ public class Division extends Node
         this.leftChild = leftChild;
         this.rightChild = rightChild;
     }
-    
-    @Override
-    public Type getType() {
-        return Type.INT;
-    }
  
     @Override
     // Returns Latex of Division

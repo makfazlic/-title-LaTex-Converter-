@@ -21,11 +21,6 @@ public class Power extends Node
         this.child = child;
         this.exponent = exponent;
     }
-    
-    @Override
-    public Type getType() {
-        return Type.INT;
-    }
  
     @Override
     // Returns Latex of Power

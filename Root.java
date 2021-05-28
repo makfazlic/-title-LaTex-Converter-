@@ -22,11 +22,6 @@ public class Root extends Node
     }
     
     @Override
-    public Type getType() {
-        return Type.INT;
-    }
- 
-    @Override
     // Returns Latex of Roots
     public String toString() {
         return "{\\sqrt[" + power.toString() + "]{" + base.toString() + "}}";

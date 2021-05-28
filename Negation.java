@@ -19,11 +19,6 @@ public class Negation extends Node {
     }
 
     @Override
-    public Type getType() {
-        return Type.INT;
-    }
-
-    @Override
     // Returns Latex of Negation
     public String toString() {
         return "{(-" + child.toString() + ")}";

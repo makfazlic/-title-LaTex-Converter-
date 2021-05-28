@@ -22,11 +22,6 @@ public class Limit extends Node
         this.from = from;
         this.to = to;
     }
-    
-    @Override
-    public Type getType() {
-        return Type.INT;
-    }
  
     @Override
     // Returns Latex of Limit

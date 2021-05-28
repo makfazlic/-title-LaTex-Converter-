@@ -76,11 +76,6 @@ public class Variable extends Node
     }
     
     @Override
-    public Type getType() {
-        return Type.INT;
-    }
-    
-    @Override
     // Returns Latex of Variable (replaces built in variables with latex)
     public String toString() {
         return "{" + name + "}";

@@ -21,11 +21,6 @@ public class Literal extends Node {
     }
 
     @Override
-    public Type getType() {
-        return Type.INT;
-    }
-
-    @Override
     // Returns Latex of Literal
     public String toString() {
         return "{" + value + "}";
