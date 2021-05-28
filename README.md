@@ -1,4 +1,4 @@
-# LateX Converter
+# LaTex Converter
 ### How to open our project:
 
 
