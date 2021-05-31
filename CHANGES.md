@@ -55,5 +55,7 @@ garbage
 - We add the possibility to add strings in the .tex file
 
 ## TO DO
+- Help menu
+- Exception class to handle error
 - Create .pdf conversion
 - Write tests 
