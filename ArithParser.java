@@ -163,6 +163,17 @@ public final class ArithParser implements Parser {
                     this.lexer.fetchNextToken();
                     factorNode = this.limitParser(); // go through the expression to exctract the limit
                     break;
+                // string case
+                case "string":
+                    String stringToInsert = "";
+                    this.lexer.fetchNextToken();
+                    this.lexer.fetchNextToken();
+                    while (lexer.getCurrentToken().getType() != TokenType.CLOSED_PAREN) {
+                        stringToInsert = stringToInsert + lexer.getCurrentToken().getText();
+                        this.lexer.fetchNextToken();
+                    }
+                    factorNode = new StringMessage(stringToInsert);
+                    break;
                 // variable case
                 default:
                     factorNode = new Variable(lexer.getCurrentToken().getText());

@@ -229,6 +229,20 @@ public class ArithParserTest{
     }
     
     @Test
+    public void testString() {
+        // setup
+        final Parser parser = new ArithParser();
+        // test input
+        final String sourceCode = "string(Hello World)";
+        // code under test
+        final Node actualRoot = parser.parse(sourceCode);
+        // expected tree
+        final Node expectedRoot = new StringMessage("Hello World");
+        // assertion
+        assertEquals(expectedRoot.toString(), actualRoot.toString());
+    }
+    
+    @Test
     public void AdvancedTest() {
         // setup
         final Parser parser = new ArithParser();
