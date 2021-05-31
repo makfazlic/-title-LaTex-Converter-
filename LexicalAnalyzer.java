@@ -39,6 +39,8 @@ public final class LexicalAnalyzer {
             new OperatorTokenFactory("-", TokenType.MINUS),
             new OperatorTokenFactory("*", TokenType.STAR),
             new OperatorTokenFactory("/", TokenType.SLASH),
+            new OperatorTokenFactory("=", TokenType.EQUAL),
+            new OperatorTokenFactory(" ", TokenType.SPACE),
             new OperatorTokenFactory("%", TokenType.PERCENT),
             new OperatorTokenFactory("(", TokenType.OPEN_PAREN),
             new OperatorTokenFactory(")", TokenType.CLOSED_PAREN),

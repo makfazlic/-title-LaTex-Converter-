@@ -28,6 +28,15 @@ public final class ArithParser implements Parser {
         lexer.fetchNextToken();
         // now parse the EXPRESSION
         Node expression = parseExpression();
+        this.lexer.fetchNextToken();
+        System.out.println("prova");
+        if (lexer.getCurrentToken().getText().equals("=")) {
+                System.out.println("prova");
+                this.lexer.fetchNextToken();
+                this.lexer.fetchNextToken();
+                expression = new Equation(expression, this.parseExpression());
+                this.lexer.fetchNextToken();
+            }
         // if the errorString is empty there aren't errors
         if (this.errorString.isEmpty()) {
             return expression;

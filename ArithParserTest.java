@@ -214,6 +214,19 @@ public class ArithParserTest{
         assertEquals(expectedRoot.toString(), actualRoot.toString());
     }
     
+    @Test
+    public void testEquation() {
+        // setup
+        final Parser parser = new ArithParser();
+        // test input
+        final String sourceCode = "((5+4)+(5+4)) = ((5+4)+(5+4))";
+        // code under test
+        final Node actualRoot = parser.parse(sourceCode);
+        // expected tree
+        final Node expectedRoot = new Equation(new Addition(new Addition(new Literal(5), new Literal(4)), new Addition(new Literal(5), new Literal(4))), new Addition(new Addition(new Literal(5), new Literal(4)), new Addition(new Literal(5), new Literal(4))));
+        // assertion
+        assertEquals(expectedRoot.toString(), actualRoot.toString());
+    }
     
     @Test
     public void AdvancedTest() {
