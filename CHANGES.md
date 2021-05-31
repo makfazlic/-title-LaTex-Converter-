@@ -44,6 +44,15 @@ garbage
 ## 28th May, Friday
 - We eliminated some unecessary files from the repository and copied other file for all Maven tests
 
+## 29th May, Saturday
+- No progress
+
+## 30th May, Sunday
+- No progress
+
+## 31th May, Monday
+- We add the possibility to convert a mathematical expression in LaTex
+
 ## TO DO
 - The = sign
 - Create .pdf conversion
