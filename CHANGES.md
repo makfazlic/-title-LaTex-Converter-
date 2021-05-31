@@ -52,8 +52,8 @@ garbage
 
 ## 31th May, Monday
 - We add the possibility to convert a mathematical expression in LaTex
+- We add the possibility to add strings in the .tex file
 
 ## TO DO
-- The = sign
 - Create .pdf conversion
 - Write tests 
