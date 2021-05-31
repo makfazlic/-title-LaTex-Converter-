@@ -1,8 +1,19 @@
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import javax.imageio.ImageIO;
-import java.util.*;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 /**
  * Allows the frame drawing.
@@ -10,6 +21,7 @@ import java.util.*;
  * @author Mak Fazlic & Roberto Ferrari - Latex project.
  * @version v1.0
  */
+
 public class DrawFrame extends JFrame
 {
 
@@ -18,9 +30,9 @@ public class DrawFrame extends JFrame
     
     /**
      * Constructor for objects of class DrawFrame
+     * @param funct is a Function Object.
      */
-    public DrawFrame(final Function funct)
-    {
+    public DrawFrame(final Function funct) {
         super();
         setTitle("Expression to Latex converter");
         setLayout(new BorderLayout());
@@ -62,30 +74,33 @@ public class DrawFrame extends JFrame
                 funct.setExpression(text);
                 final String newText = funct.getExpression();
                 label.setText(newText);
-            }}
+            } 
+        }
         );
         
         add.addActionListener(new ActionListener() { 
             public void actionPerformed(final ActionEvent e) {
                 System.out.println(label.getText());
-                if (label.getText().equals("Added!") || label.getText().equals("Convert again!")){
-                label.setText("Convert again!");
-                }
-                else if (label.getText() != null) {
-                latex.add(label.getText());
-                counter.setText("Additions: " + latex.size() + ", Last addition = " + label.getText());
-                label.setText("Added!");
-                }
-                else {
-                label.setText("No LaTex command to add!");
-            }}}
+                if (label.getText().equals("Added!") || label.getText().equals("Convert again!")) {
+                    label.setText("Convert again!");
+                } else if (label.getText() != null) {
+                    latex.add(label.getText());
+                    counter.setText("Additions: " + latex.size() + ", Last addition = " 
+                                        + label.getText());
+                    label.setText("Added!");
+                } else {
+                    label.setText("No LaTex command to add!");
+                } 
+            } 
+        }
         );
         
         process.addActionListener(new ActionListener() { 
             public void actionPerformed(final ActionEvent e) {
                 label.setText("Initialized compilation");
                 label.setText(FormLatex.form(latex));
-            }}
+            }
+        }
         );
         
         pack();

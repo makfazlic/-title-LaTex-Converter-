@@ -13,10 +13,11 @@ public class Multiplication extends Node
 
     /**
      * Constructor for objects of class Multiplication.
-     * @param leftChild is the first node of the expression.
-     * @param rightChild is the second node of the expression.
+     * 
+     * @param leftChild is a Node which represents the first factor.
+     * @param rightChild is a Node which represents the second factor.
      */
-    public Multiplication(final Node leftChild, final Node rightChild){
+    public Multiplication(final Node leftChild, final Node rightChild) {
         super();
         this.leftChild = leftChild;
         this.rightChild = rightChild;

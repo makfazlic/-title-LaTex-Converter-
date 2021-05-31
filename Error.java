@@ -10,9 +10,10 @@ public class Error extends Node {
     private final String errorMessage;
     
     /**
-     * Constructor for objects of class Division.
-     * @param leftChild expression Node.
-     * @param rightChild expression Node.
+     * Constructor for objects of class Error.
+     * 
+     * @param errorMessage is a String which represents the correct message when
+     *          there's an error.
      */
     public Error(final String errorMessage) {
         super();

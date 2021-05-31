@@ -9,19 +9,20 @@ import java.awt.EventQueue;
  */
 public class Main
 {
-
-    private Main(){
-    }
-
-    public static void main (final String[] args){
-        final Function funct= new Function(null);
+    /**
+     * Main of the LaTex converter.
+     * 
+     * @param args represents command from the command line.
+     */
+    public static void main(final String[] args) {
+        final Function funct = new Function(null);
         
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 final DrawFrame frame = new DrawFrame(funct);
                 frame.setVisible(true);
             }
-        });
+        } );
         
     }
 }

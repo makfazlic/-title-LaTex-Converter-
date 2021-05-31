@@ -1,13 +1,14 @@
-import java.util.*;
+import java.util.HashMap;
 /**
  * A Variable node.
  *
  * @author Mak Fazlic & Roberto Ferrari - Latex project.
  * @version v1.0
  */
+
 public class Variable extends Node
 {
-    // instance variables
+
     private String name;
     HashMap<String, String> symbols = new HashMap<String, String>();
     
@@ -15,7 +16,7 @@ public class Variable extends Node
      * Constructor for objects of class Variable.
      * @param var is a String which represents the variable's name.
      */
-    public Variable(final String var){
+    public Variable(final String var) {
         super();
         loadVariables();
         name = var;

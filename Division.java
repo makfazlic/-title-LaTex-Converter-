@@ -15,7 +15,7 @@ public class Division extends Node
      * @param leftChild expression Node.
      * @param rightChild expression Node.
      */
-    public Division(final Node leftChild, final Node rightChild){
+    public Division(final Node leftChild, final Node rightChild) {
         super();
         this.leftChild = leftChild;
         this.rightChild = rightChild;

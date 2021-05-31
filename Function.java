@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 /**
- * Write a description of class Function here.
+ * Function.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Mak Fazlic & Roberto Ferrari - Latex project.
+ * @version v1.0
  */
 public class Function
 {
@@ -12,7 +12,9 @@ public class Function
     private String sourcecode;
 
     /**
-     * Constructor for objects of class Function
+     * Constructor for objects of class Function.
+     * 
+     * @param sourcecode is a String which represents the math expression.
      */
     public Function(final String sourcecode)
     {
@@ -20,10 +22,9 @@ public class Function
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * setExpression.
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param sourcecode is a String which represents the math expression.
      */
     public final void setExpression(final String sourcecode) {
         final Parser parser = new ArithParser();
@@ -33,6 +34,11 @@ public class Function
         }
     }
     
+    /**
+     * it returns the expression.
+     *
+     * @return a String with the math expression.
+     */
     public final String getExpression() {
         return sourcecode;
     }

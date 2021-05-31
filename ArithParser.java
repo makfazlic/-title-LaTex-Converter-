@@ -26,17 +26,14 @@ public final class ArithParser implements Parser {
         this.errorString = "";
         // fetch first token
         lexer.fetchNextToken();
-        // now parse the EXPRESSION
         Node expression = parseExpression();
         this.lexer.fetchNextToken();
-        System.out.println("prova");
         if (lexer.getCurrentToken().getText().equals("=")) {
-                System.out.println("prova");
-                this.lexer.fetchNextToken();
-                this.lexer.fetchNextToken();
-                expression = new Equation(expression, this.parseExpression());
-                this.lexer.fetchNextToken();
-            }
+            this.lexer.fetchNextToken();
+            this.lexer.fetchNextToken();
+            expression = new Equation(expression, this.parseExpression());
+            this.lexer.fetchNextToken();
+        }
         // if the errorString is empty there aren't errors
         if (this.errorString.isEmpty()) {
             return expression;
@@ -153,17 +150,14 @@ public final class ArithParser implements Parser {
         } else if (lexer.getCurrentToken().getType() == TokenType.IDENTIFIER) {
             // identifier case
             switch (lexer.getCurrentToken().getText()) {
-                // root case
                 case "root":
                     this.lexer.fetchNextToken();
-                    factorNode = this.rootParser(); // go through the expression to exctract the root
+                    factorNode = this.rootParser(); // go through the expression to exctract root
                     break;
-                // limit case
                 case "lim":
                     this.lexer.fetchNextToken();
-                    factorNode = this.limitParser(); // go through the expression to exctract the limit
+                    factorNode = this.limitParser(); // go through the expression to exctract limit
                     break;
-                // string case
                 case "string":
                     String stringToInsert = "";
                     this.lexer.fetchNextToken();
@@ -187,7 +181,11 @@ public final class ArithParser implements Parser {
         }
         return factorNode;
     }
-
+    
+    /**
+     * Parse in case there's a limit in the expression.
+     * @return a Node representing the limit
+     */
     public Node limitParser() {
         // set limit variable
         final Node variable = this.creationLimitVariable();
@@ -204,6 +202,10 @@ public final class ArithParser implements Parser {
         return limitNode;
     }
     
+    /**
+     * Parse in case there's a root in the expression.
+     * @return a Node representing the limit.
+     */
     public Node rootParser() {   
         // set root grade
         final Node grade = this.creationRootGrade();  
@@ -217,10 +219,20 @@ public final class ArithParser implements Parser {
         return rootNode;
     }
     
-    public boolean tokenAnalyzer(String expectedToken) {
+    /**
+     * It analyzes the current Token in the expression.
+     * @param expectedToken is a String which represents the token that we excpect.
+     * @return a boolean which is True if the current token is equal to the token 
+     *          which we excpect.         
+     */
+    public boolean tokenAnalyzer(final String expectedToken) {
         return this.lexer.getCurrentToken().getText().equals(expectedToken);
     }
     
+    /**
+     * It creates the grade of the root in the expression.
+     * @return a Node representing the grade of the root in LaTex.
+     */
     public Node creationRootGrade() {
         // check if there is a colon after the word 'root'
         this.parseError(":", "You must to start with colon after 'root' word");
@@ -229,7 +241,12 @@ public final class ArithParser implements Parser {
         return this.parseExpression();
     }
     
-    public Node creationRoot(Node grade) {
+    /**
+     * It creates the root in the expression.
+     * @param grade is a Node which represents the grade of the root.
+     * @return a Node representing the root in LaTex.
+     */
+    public Node creationRoot(final Node grade) {
         // check if there is a colon between the grade and the body of the root
         this.parseError(":", "The body of the root and the grade must be separated by a colon");
         this.lexer.fetchNextToken();
@@ -237,6 +254,10 @@ public final class ArithParser implements Parser {
         return new Root(grade, this.parseExpression());
     }
     
+    /**
+     * It creates the variable of the limit in the expression.
+     * @return a Node representing the variable of the limit in LaTex.
+     */    
     public Node creationLimitVariable() {
         // check if there is a colon after the word 'lim'
         this.parseError(":", "You must to start with colon after 'lim' word");
@@ -246,6 +267,10 @@ public final class ArithParser implements Parser {
         return new Variable(lexer.getCurrentToken().getText());
     }
     
+    /**
+     * It creates the value of the limit in the expression.
+     * @return a Node representing the value of the limit in LaTex.
+     */
     public Node creationLimitValue() {
         // check if there is a comma which separate the variable and the value
         this.parseError(",", "Put a comma between the variable and the variable value");
@@ -254,15 +279,28 @@ public final class ArithParser implements Parser {
         return this.parseExpression();
     }
     
-    public Node creationLimit(Node variable, Node value) {
-        // check if there is a colon which separate the variable section and the body of the limit
-        this.parseError(":", "The body of the limit and the variable section must be separated by a colon");
+    /**
+     * It creates the limit in the expression.
+     * @param variable is a Node which represents the variable of the limit.
+     * @param value is a Node which represents the value of the limit
+     * @return a Node representing the limit in LaTex.
+     */
+    public Node creationLimit(final Node variable, final Node value) {
+        this.parseError(":", "The body of the limit and the variable section " 
+                                + "must be separated by a colon");
         this.lexer.fetchNextToken();
         
         return new Limit(this.parseExpression(), variable, value);
     }
     
-    public void parseError(String expectedToken, String errorMessage) {
+    /**
+     * It checks if the user has written wrong the expression and update errorString with
+     * a message which explain what's going wrong.
+     * @param expectedToken is a String which represents the expected token.
+     * @param errorMessage is a String which represents the message that the 
+     *          user will see if there's an error.
+     */
+    public void parseError(final String expectedToken, final String errorMessage) {
         if (!this.tokenAnalyzer(expectedToken) && this.errorString.isEmpty()) {
             this.errorString = errorMessage;
         }

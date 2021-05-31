@@ -12,11 +12,12 @@ public class Limit extends Node
     private final Node to;
 
     /**
-     * Constructor for objects of class LLimit.
-     * @param leftChild expression Node.
-     * @param rightChild expression Node.
+     * Constructor for objects of class Limit.
+     * @param child expression Node
+     * @param from variable Node.
+     * @param to value Node.
      */
-    public Limit(final Node child, final Node from, final Node to){
+    public Limit(final Node child, final Node from, final Node to) {
         super();
         this.child = child;
         this.from = from;
@@ -26,6 +27,7 @@ public class Limit extends Node
     @Override
     // Returns Latex of Limit
     public String toString() {
-        return "\\lim_{" + from.toString() + "\\to " + to.toString() + "}{" + child.toString() + "}";
+        return "\\lim_{" + from.toString() + "\\to " + to.toString() + "}"
+                + "{" + child.toString() + "}";
     }
 }

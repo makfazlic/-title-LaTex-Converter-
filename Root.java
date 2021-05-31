@@ -15,7 +15,7 @@ public class Root extends Node
      * @param power expression Node.
      * @param base expression Node.
      */
-    public Root(final Node power, final Node base){
+    public Root(final Node power, final Node base) {
         super();
         this.power = power;
         this.base = base;       
