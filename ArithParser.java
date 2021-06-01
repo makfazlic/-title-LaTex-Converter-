@@ -166,7 +166,13 @@ public final class ArithParser implements Parser {
                         stringToInsert = stringToInsert + lexer.getCurrentToken().getText();
                         this.lexer.fetchNextToken();
                     }
-                    factorNode = new StringMessage(stringToInsert);
+                    this.lexer.fetchNextToken();
+                    if (this.tokenAnalyzer(":")) {
+                        this.lexer.fetchNextToken();
+                        factorNode = new StringExpression(stringToInsert, this.parseExpression());
+                    } else {
+                        factorNode = new StringMessage(stringToInsert);
+                    }       
                     break;
                 // variable case
                 default:

@@ -229,7 +229,7 @@ public class ArithParserTest{
     }
     
     @Test
-    public void testString() {
+    public void testStringMessage() {
         // setup
         final Parser parser = new ArithParser();
         // test input
@@ -238,6 +238,20 @@ public class ArithParserTest{
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
         final Node expectedRoot = new StringMessage("Hello World");
+        // assertion
+        assertEquals(expectedRoot.toString(), actualRoot.toString());
+    }
+    
+    @Test
+    public void testStringExpression() {
+        // setup
+        final Parser parser = new ArithParser();
+        // test input
+        final String sourceCode = "string(Hello World):(5+4)";
+        // code under test
+        final Node actualRoot = parser.parse(sourceCode);
+        // expected tree
+        final Node expectedRoot = new StringExpression("Hello World", new Addition(new Literal(5), new Literal(4)));
         // assertion
         assertEquals(expectedRoot.toString(), actualRoot.toString());
     }
