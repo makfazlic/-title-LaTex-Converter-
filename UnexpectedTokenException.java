@@ -1,4 +1,3 @@
-
 /**
  * Exception class which checks if the current token is correct.
  *

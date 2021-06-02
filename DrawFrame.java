@@ -5,7 +5,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import javax.imageio.ImageIO;
+//import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -45,7 +45,7 @@ public class DrawFrame extends JFrame
         final JButton process = new JButton("Process");
         
         final JTextField sourcecode = new JTextField(funct.getExpression(), 15);
-        Font bigFont = sourcecode.getFont().deriveFont(Font.PLAIN, 30f);
+        final Font bigFont = sourcecode.getFont().deriveFont(Font.PLAIN, 30f);
         sourcecode.setFont(bigFont);        
 
         panel.add(sourcecode);
@@ -57,8 +57,8 @@ public class DrawFrame extends JFrame
         
         final JLabel label = new JLabel(funct.getExpression(), SwingConstants.CENTER);
         label.setIcon(new ImageIcon("Background.jpg"));
-        label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        label.setHorizontalAlignment(SwingConstants.CENTER);
+        label.setHorizontalTextPosition(SwingConstants.CENTER);
         label.setForeground(Color.white);
         label.setBounds(100, 100, 100, 100);
         label.setFont(new Font("Verdana", Font.PLAIN, 50));

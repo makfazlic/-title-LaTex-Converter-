@@ -8,9 +8,8 @@ import java.util.HashMap;
 
 public class Variable extends Node
 {
-
     private String name;
-    HashMap<String, String> symbols = new HashMap<String, String>();
+    private HashMap<String, String> symbols = new HashMap<String, String>();
     
     /**
      * Constructor for objects of class Variable.

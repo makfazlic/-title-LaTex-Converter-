@@ -11,14 +11,7 @@ import java.util.ArrayList;
  * @version v1.0
  */
 
-public class FormLatex
-{
-    /**
-     * FormLatex constructor.
-     * 
-     * @param middle is a String.
-     */
-    public FormLatex(String middle){}
+public class FormLatex {
     
     /**
      * To complete with a correct desctription.
@@ -79,7 +72,8 @@ public class FormLatex
                 + "\\vspace{-3em}\n";
                 
         final String begin = "\\documentclass{article}"
-                                + "\\usepackage[utf8]{inputenc}\\begin{document}\\section{Introduction}";
+                                + "\\usepackage[utf8]{inputenc}"
+                                + "\\begin{document}\\section{Introduction}";
                                 
         final String end = "\\end{document}";
         
@@ -107,7 +101,9 @@ public class FormLatex
                 final BufferedReader reader = new BufferedReader(
                     new InputStreamReader(process.getInputStream()));
                 String line;
-                while ((line = reader.readLine()) != null) {
+                line = reader.readLine();
+                while (line != null) {
+                    line = reader.readLine();
                     System.out.println(line);
                 }
                 System.out.println(line);
