@@ -109,14 +109,13 @@ public class FormLatex
                 }
                 System.out.println(line);
                 reader.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (IOException ex) {
+                ex.printStackTrace();
             }
             return "Succesfully compiled to: output.pdf";
-        }  
-        catch (IOException e) {
+        } catch (IOException ex) {
             System.out.println("An error occurred.");
-            e.printStackTrace();
+            ex.printStackTrace();
             return "An error occurred.";
         }
     }

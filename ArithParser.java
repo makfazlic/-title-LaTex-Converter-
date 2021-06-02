@@ -13,8 +13,6 @@
 public final class ArithParser implements Parser {
     
     private LexicalAnalyzer lexer;
-    private String errorString;
-
     
     /**
      * Parse a program in the Arith language.
@@ -23,22 +21,20 @@ public final class ArithParser implements Parser {
      */
     public Node parse(final String sourceCode) {
         this.lexer = new LexicalAnalyzer(sourceCode);
-        this.errorString = "";
         // fetch first token
-        lexer.fetchNextToken();
-        Node expression = parseExpression();
         this.lexer.fetchNextToken();
-        if (lexer.getCurrentToken().getText().equals("=")) {
+        try {
+            final Node expression = parseExpression();
             this.lexer.fetchNextToken();
-            this.lexer.fetchNextToken();
-            expression = new Equation(expression, this.parseExpression());
-            this.lexer.fetchNextToken();
-        }
-        // if the errorString is empty there aren't errors
-        if (this.errorString.isEmpty()) {
-            return expression;
-        } else {
-            return new Error(this.errorString);
+            if (lexer.getCurrentToken().getText().equals("=")) {
+                this.lexer.fetchNextToken();
+                this.lexer.fetchNextToken();
+                return new Equation(expression, this.parseExpression());
+            } else {
+                return expression;
+            }
+        } catch (UnexpectedTokenException ex) {
+            return new Error(ex.getMessage());
         }
     }
     
@@ -51,9 +47,10 @@ public final class ArithParser implements Parser {
      * EXPRESSION ::= [ "+" | "-" ] TERM { ( "+" | "-" ) TERM }
      * </code>
      * 
-     * @return a Node representing the expression
+     * @return a Node representing the expression.
+     * @throws UnexpectedTokenException if there isn't the expected token.
      */
-    private Node parseExpression() {
+    private Node parseExpression() throws UnexpectedTokenException {
         Node expressionNode;
         //check if first node has before "-" or "+"
         if (lexer.getCurrentToken().getType() == TokenType.MINUS) {
@@ -101,10 +98,11 @@ public final class ArithParser implements Parser {
      * <code>
      * TERM ::= FACTOR { ( "*" | "/" ) FACTOR }
      * </code>
-     * 
-     * @return a Node representing the term
+     *
+     * @return a Node representing the term.
+     * @throws UnexpectedTokenException if there isn't the expected token.
      */
-    private Node parseTerm() {
+    private Node parseTerm() throws UnexpectedTokenException {
         Node termNode = this.parseFactor();
         // do a loop for the case which has multiplication or division
         while (lexer.getCurrentToken().getType() == TokenType.STAR 
@@ -139,9 +137,10 @@ public final class ArithParser implements Parser {
      *          "(" EXPRESSION ")"
      * </code>
      * 
-     * @return a Node representing the factor
+     * @return a Node representing the factor.
+     * @throws UnexpectedTokenException if there isn't the expected token.
      */
-    private Node parseFactor() {
+    private Node parseFactor() throws UnexpectedTokenException {
         Node factorNode;
         if (lexer.getCurrentToken().getType() == TokenType.LITERAL) {
             // literal case
@@ -159,20 +158,9 @@ public final class ArithParser implements Parser {
                     factorNode = this.limitParser(); // go through the expression to exctract limit
                     break;
                 case "string":
-                    String stringToInsert = "";
                     this.lexer.fetchNextToken();
                     this.lexer.fetchNextToken();
-                    while (lexer.getCurrentToken().getType() != TokenType.CLOSED_PAREN) {
-                        stringToInsert = stringToInsert + lexer.getCurrentToken().getText();
-                        this.lexer.fetchNextToken();
-                    }
-                    this.lexer.fetchNextToken();
-                    if (this.tokenAnalyzer(":")) {
-                        this.lexer.fetchNextToken();
-                        factorNode = new StringExpression(stringToInsert, this.parseExpression());
-                    } else {
-                        factorNode = new StringMessage(stringToInsert);
-                    }       
+                    factorNode = this.stringParser(); // case -> "String" or "String: Expression"   
                     break;
                 // variable case
                 default:
@@ -190,9 +178,10 @@ public final class ArithParser implements Parser {
     
     /**
      * Parse in case there's a limit in the expression.
-     * @return a Node representing the limit
+     * @return a Node representing the limit.
+     * @throws UnexpectedTokenException if there isn't the expected token.
      */
-    public Node limitParser() {
+    public Node limitParser() throws UnexpectedTokenException {
         // set limit variable
         final Node variable = this.creationLimitVariable();
         this.lexer.fetchNextToken();
@@ -211,8 +200,9 @@ public final class ArithParser implements Parser {
     /**
      * Parse in case there's a root in the expression.
      * @return a Node representing the limit.
+     * @throws UnexpectedTokenException if there isn't the expected token.
      */
-    public Node rootParser() {   
+    public Node rootParser() throws UnexpectedTokenException {   
         // set root grade
         final Node grade = this.creationRootGrade();  
         this.lexer.fetchNextToken();
@@ -223,6 +213,26 @@ public final class ArithParser implements Parser {
         this.lexer.fetchNextToken();
         
         return rootNode;
+    }
+    
+    /**
+     * It analyzes the expression if the user want to insert a String in the .tex file.
+     * @return a Node with the String and if necessary the expression.
+     * @throws UnexpectedTokenException if there isn't the expected token.
+     */
+    public Node stringParser() throws UnexpectedTokenException {
+        String stringToInsert = "";
+        while (lexer.getCurrentToken().getType() != TokenType.CLOSED_PAREN) {
+            stringToInsert = stringToInsert + lexer.getCurrentToken().getText();
+            this.lexer.fetchNextToken();
+        }
+        this.lexer.fetchNextToken();
+        if (this.tokenAnalyzer(":")) {
+            this.lexer.fetchNextToken();
+            return new StringExpression(stringToInsert, this.parseExpression());
+        } else {
+            return new StringMessage(stringToInsert);
+        }
     }
     
     /**
@@ -238,65 +248,82 @@ public final class ArithParser implements Parser {
     /**
      * It creates the grade of the root in the expression.
      * @return a Node representing the grade of the root in LaTex.
+     * @throws UnexpectedTokenException if there isn't the expected token.
      */
-    public Node creationRootGrade() {
+    public Node creationRootGrade() throws UnexpectedTokenException {
         // check if there is a colon after the word 'root'
-        this.parseError(":", "You must to start with colon after 'root' word");
-        this.lexer.fetchNextToken();
-        
-        return this.parseExpression();
+        if (this.tokenAnalyzer(":")) {
+            this.lexer.fetchNextToken();     
+            return this.parseExpression();
+        } else {
+            throw new UnexpectedTokenException("You must to start with colon after 'root' word");
+        }
     }
     
     /**
      * It creates the root in the expression.
      * @param grade is a Node which represents the grade of the root.
      * @return a Node representing the root in LaTex.
+     * @throws UnexpectedTokenException if there isn't the expected token.
      */
-    public Node creationRoot(final Node grade) {
+    public Node creationRoot(final Node grade) throws UnexpectedTokenException {
         // check if there is a colon between the grade and the body of the root
-        this.parseError(":", "The body of the root and the grade must be separated by a colon");
-        this.lexer.fetchNextToken();
-        
-        return new Root(grade, this.parseExpression());
+        if (this.tokenAnalyzer(":")) {
+            this.lexer.fetchNextToken();        
+            return new Root(grade, this.parseExpression());
+        } else {
+            throw new UnexpectedTokenException("The body of the root and the grade "
+                                                + "must be separated by a colon");
+        }        
     }
     
     /**
      * It creates the variable of the limit in the expression.
      * @return a Node representing the variable of the limit in LaTex.
+     * @throws UnexpectedTokenException if there isn't the expected token.
      */    
-    public Node creationLimitVariable() {
+    public Node creationLimitVariable() throws UnexpectedTokenException {
         // check if there is a colon after the word 'lim'
-        this.parseError(":", "You must to start with colon after 'lim' word");
-        this.lexer.fetchNextToken();
-        this.lexer.fetchNextToken();
-        
-        return new Variable(lexer.getCurrentToken().getText());
+        if (this.tokenAnalyzer(":")) {
+            this.lexer.fetchNextToken();
+            this.lexer.fetchNextToken();      
+            return new Variable(lexer.getCurrentToken().getText());
+        } else {
+            throw new UnexpectedTokenException("You must to start with colon after 'lim' word");
+        }
     }
     
     /**
      * It creates the value of the limit in the expression.
      * @return a Node representing the value of the limit in LaTex.
+     * @throws UnexpectedTokenException if there isn't the expected token.
      */
-    public Node creationLimitValue() {
+    public Node creationLimitValue() throws UnexpectedTokenException {
         // check if there is a comma which separate the variable and the value
-        this.parseError(",", "Put a comma between the variable and the variable value");
-        this.lexer.fetchNextToken(); 
-        
-        return this.parseExpression();
+        if (this.tokenAnalyzer(",")) {
+            this.lexer.fetchNextToken();
+            return this.parseExpression();
+        } else {
+            throw new UnexpectedTokenException("Put a comma between the variable "
+                                                + "and the variable value");
+        }
     }
     
     /**
      * It creates the limit in the expression.
      * @param variable is a Node which represents the variable of the limit.
-     * @param value is a Node which represents the value of the limit
+     * @param value is a Node which represents the value of the limit. 
      * @return a Node representing the limit in LaTex.
+     * @throws UnexpectedTokenException if there isn't the expected token.
      */
-    public Node creationLimit(final Node variable, final Node value) {
-        this.parseError(":", "The body of the limit and the variable section " 
-                                + "must be separated by a colon");
-        this.lexer.fetchNextToken();
-        
-        return new Limit(this.parseExpression(), variable, value);
+    public Node creationLimit(final Node variable, final Node value) throws UnexpectedTokenException {
+        if (this.tokenAnalyzer(":")) {
+            this.lexer.fetchNextToken();
+            return new Limit(this.parseExpression(), variable, value);
+        } else {
+            throw new UnexpectedTokenException("The body of the limit and the variable section " 
+                                                + "must be separated by a colon");
+        }
     }
     
     /**
@@ -305,10 +332,11 @@ public final class ArithParser implements Parser {
      * @param expectedToken is a String which represents the expected token.
      * @param errorMessage is a String which represents the message that the 
      *          user will see if there's an error.
+     * @throws UnexpectedTokenException if there isn't the expected token.
      */
-    public void parseError(final String expectedToken, final String errorMessage) {
-        if (!this.tokenAnalyzer(expectedToken) && this.errorString.isEmpty()) {
-            this.errorString = errorMessage;
+    public void parseError(final String expectedToken, final String errorMessage) throws UnexpectedTokenException {
+        if (!this.tokenAnalyzer(expectedToken)) {
+            throw new UnexpectedTokenException(errorMessage);
         }
     }
 }

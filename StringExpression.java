@@ -14,7 +14,8 @@ public class StringExpression extends Node {
     
     /**
      * Create a new Literal node.
-     * @param value the integer value this node evaluates to
+     * @param value the integer value this node evaluates to.
+     * @param expression is the AST which is after the String.
      */
     public StringExpression(final String value, final Node expression) {
         super();
