@@ -316,7 +316,8 @@ public final class ArithParser implements Parser {
      * @return a Node representing the limit in LaTex.
      * @throws UnexpectedTokenException if there isn't the expected token.
      */
-    public Node creationLimit(final Node variable, final Node value) throws UnexpectedTokenException {
+    public Node creationLimit(final Node variable, final Node value) 
+        throws UnexpectedTokenException {
         if (this.tokenAnalyzer(":")) {
             this.lexer.fetchNextToken();
             return new Limit(this.parseExpression(), variable, value);
@@ -334,7 +335,8 @@ public final class ArithParser implements Parser {
      *          user will see if there's an error.
      * @throws UnexpectedTokenException if there isn't the expected token.
      */
-    public void parseError(final String expectedToken, final String errorMessage) throws UnexpectedTokenException {
+    public void parseError(final String expectedToken, final String errorMessage) 
+        throws UnexpectedTokenException {
         if (!this.tokenAnalyzer(expectedToken)) {
             throw new UnexpectedTokenException(errorMessage);
         }
