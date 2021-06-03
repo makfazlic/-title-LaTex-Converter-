@@ -23,7 +23,7 @@ public class StringMessage extends Node {
     @Override
     // Returns Latex of Literal
     public String toLatex() {
-        return "\\]\\section{" + value +"}\\[";
+        return "\\section{" + value +"}";
     }
     
 }
