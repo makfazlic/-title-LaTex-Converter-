@@ -22,7 +22,7 @@ $ Main.java
 Once we start the program, a window will open where we will find the GUI of our project that will manage the user's requests and is divided into two parts: the input area, at the top, and the black background output area.
 ### Input area
 On the input area we'll find the following element:
-- **"Help" button**: ???
+- A **"Help" button** which opens a second window with some instructions for a correct use of teh program.
 - A **text field** where the user can write his math expression and using a correct syntax even strings.
 - A **"Convert" button** which converts what's in the text field.
 - An **"Add" button** which is used to add the code that we converted into a .tex file.
