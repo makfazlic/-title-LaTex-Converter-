@@ -247,11 +247,11 @@ public class ArithParserTest{
         // setup
         final Parser parser = new ArithParser();
         // test input
-        final String sourceCode = "string(Hello World):(5+4)";
+        final String sourceCode = "string(Hello World):(a+b) = (b+a)";
         // code under test
         final Node actualRoot = parser.parse(sourceCode);
         // expected tree
-        final Node expectedRoot = new StringExpression("Hello World", new Addition(new Literal(5), new Literal(4)));
+        final Node expectedRoot = new StringExpression("Hello World", new Equation(new Addition(new Variable("a"), new Variable("b")), new Addition(new Variable("b"), new Variable("a"))));
         // assertion
         assertEquals(expectedRoot.toLatex(), actualRoot.toLatex());
     }
