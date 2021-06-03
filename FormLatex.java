@@ -1,7 +1,5 @@
-import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /**
@@ -22,7 +20,6 @@ public class FormLatex {
     public static String form(final ArrayList<String> commands) {
         String output;
         final String latex;
-                
         final String begin = "\\documentclass{article}"
                                 + "\\usepackage[utf8]{inputenc}"
                                 + "\\begin{document}";
