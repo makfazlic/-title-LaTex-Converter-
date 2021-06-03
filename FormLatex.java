@@ -29,7 +29,7 @@ public class FormLatex {
         String middle = "";
         
         for (final String str : commands) {   
-            if (str.contains("seection") || str.contains("textit")) {
+            if (str.contains("section") || str.contains("textit")) {
                 middle = middle + str;
             } else {
             middle = middle + "\\[ " + str + " \\]"; 
