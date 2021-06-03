@@ -38,4 +38,4 @@ For a correct execution of the program we developers have created some simple gr
 - **Power**: follow this rule, (base)^(exponent), if and only if the exponent is a single number **DON'T USE** parenthesis for the exponent. (eg. (5+1)^(3*2), (5+1)^2 ).
 - **Limit**: follow this rule, *lim:(variable,value):(expression):*. (eg. *lim:(x,10):((x+3)/5):* ).
 - **Root**: follow this rule, *root:grade:(expression):*. (eg. *root:2:(5+3):* ).
-- **String**: for strings you have two possibilities, you can print only a string writing *string(sentence_to_add)* or you can directly print a string with an expression after separeted from a colon in this way *string(sentence_to_add):(expression)*. (eg. *string(Hello World)*, *string(Commutative Property):(a+b) = (b+a)* ).
+- **String**: for strings you have two possibilities, you can print only a string writing *string(sentence_to_add)* or you can directly print a string with an expression after separeted by a colon in this way *string(sentence_to_add):(expression)*. (eg. *string(Hello World)*, *string(Commutative Property):(a+b) = (b+a)* ).
