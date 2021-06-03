@@ -81,7 +81,7 @@ public class DrawFrame extends JFrame
         
         
         final JLabel counter = new JLabel(funct.getExpression(), SwingConstants.CENTER);
-        counter.setFont(new Font("Verdana", Font.PLAIN, 15));
+        counter.setFont(new Font("Verdana", Font.PLAIN, 20));
         add(counter, BorderLayout.SOUTH);
         convert.addActionListener(new ActionListener() { 
             public void actionPerformed(final ActionEvent e) {
@@ -95,7 +95,6 @@ public class DrawFrame extends JFrame
         
         add.addActionListener(new ActionListener() { 
             public void actionPerformed(final ActionEvent e) {
-                System.out.println(label.getText());
                 if (label.getText().equals("Added!") || label.getText().equals("Convert again!")) {
                     label.setText("Convert again!");
                 } else if (label.getText() != null) {
@@ -114,6 +113,8 @@ public class DrawFrame extends JFrame
             public void actionPerformed(final ActionEvent e) {
                 label.setText("Initialized compilation");
                 label.setText(FormLatex.form(latex));
+                label.setIcon(null);
+                label.setIcon(new ImageIcon("done.jpg"));
             }
         }
         );
