@@ -23,8 +23,8 @@ public class Equation extends Node {
  
     @Override
     // Returns Latex of Equation
-    public String toString() {
-        return "" + leftChild.toString() + " = " + rightChild.toString() + "";
+    public String toLatex() {
+        return "" + leftChild.toLatex() + " = " + rightChild.toLatex() + "";
     }
     
 }

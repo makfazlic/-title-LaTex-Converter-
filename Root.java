@@ -23,7 +23,7 @@ public class Root extends Node
     
     @Override
     // Returns Latex of Roots
-    public String toString() {
-        return "{\\sqrt[" + power.toString() + "]{" + base.toString() + "}}";
+    public String toLatex() {
+        return "{\\sqrt[" + power.toLatex() + "]{" + base.toLatex() + "}}";
     }
 }

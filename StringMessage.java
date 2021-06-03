@@ -22,7 +22,7 @@ public class StringMessage extends Node {
 
     @Override
     // Returns Latex of Literal
-    public String toString() {
+    public String toLatex() {
         return value;
     }
     

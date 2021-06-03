@@ -26,8 +26,8 @@ public class Limit extends Node
  
     @Override
     // Returns Latex of Limit
-    public String toString() {
-        return "\\lim_{" + from.toString() + "\\to " + to.toString() + "}"
-                + "{" + child.toString() + "}";
+    public String toLatex() {
+        return "\\lim_{" + from.toLatex() + "\\to " + to.toLatex() + "}"
+                + "{" + child.toLatex() + "}";
     }
 }

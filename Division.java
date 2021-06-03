@@ -23,7 +23,7 @@ public class Division extends Node
  
     @Override
     // Returns Latex of Division
-    public String toString() {
-        return "\\frac{" + leftChild.toString() + "}{" + rightChild.toString() + "}";
+    public String toLatex() {
+        return "\\frac{" + leftChild.toLatex() + "}{" + rightChild.toLatex() + "}";
     }
 }

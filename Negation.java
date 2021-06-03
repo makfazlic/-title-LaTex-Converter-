@@ -20,8 +20,8 @@ public class Negation extends Node {
 
     @Override
     // Returns Latex of Negation
-    public String toString() {
-        return "{(-" + child.toString() + ")}";
+    public String toLatex() {
+        return "{(-" + child.toLatex() + ")}";
     }
     
 }

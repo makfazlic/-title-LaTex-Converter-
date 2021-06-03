@@ -25,7 +25,7 @@ public class Multiplication extends Node
 
     @Override
     // Returns Latex of Multiplication
-    public String toString() {
-        return "{\\left(" + leftChild.toString() + "*" + rightChild.toString() + "\\right)}";
+    public String toLatex() {
+        return "{\\left(" + leftChild.toLatex() + "*" + rightChild.toLatex() + "\\right)}";
     }
 }

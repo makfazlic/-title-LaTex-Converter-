@@ -30,7 +30,7 @@ public class Function
         final Parser parser = new ArithParser();
         if (sourcecode != null) {
             final Node parsed = parser.parse(sourcecode);
-            this.sourcecode = parsed.toString();
+            this.sourcecode = parsed.toLatex();
         }
     }
     

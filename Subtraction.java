@@ -23,8 +23,8 @@ public class Subtraction extends Node {
 
     @Override
     // Returns Latex of Subtraction
-    public String toString() {
-        return "{\\left(" + leftChild.toString() + "-" + rightChild.toString() + "\\right)}";
+    public String toLatex() {
+        return "{\\left(" + leftChild.toLatex() + "-" + rightChild.toLatex() + "\\right)}";
     }
     
 }

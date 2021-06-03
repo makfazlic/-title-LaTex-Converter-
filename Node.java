@@ -9,7 +9,7 @@ public class Node {
      * extra parentheses.
      * @return a String representation of this AST
      */
-    public String toString() {
+    public String toLatex() {
         // to be implemented in subclasses
         return "?";
     }
