@@ -20,16 +20,22 @@ public class FormLatex {
     public static String form(final ArrayList<String> commands) {
         String output;
         final String latex;
-        final String begin = "\\documentclass{article}"
-                                + "\\usepackage[utf8]{inputenc}"
-                                + "\\begin{document}";
+        final String begin = "\\documentclass{article}" +
+"\\usepackage[english]{babel}"+
+"\\usepackage[utf8]{inputenc}"+
+"\\usepackage{fancyhdr}"+
+"\\pagestyle{fancy}"+
+"\\fancyhf{}"+
+"\\rhead{ROberto Ferrari and Mak Fazlic}"+
+"\\lhead{Latex Converter}"+
+"\\rfoot{Page \\thepage}";
                                 
         final String end = "\\end{document}";
         
         String middle = "";
         
         for (final String str : commands) {   
-            if (str.contains("seection") || str.contains("textit")) {
+            if (str.contains("section") || str.contains("textit")) {
                 middle = middle + str;
             } else {
             middle = middle + "\\[ " + str + " \\]"; 

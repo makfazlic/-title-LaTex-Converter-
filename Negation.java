@@ -21,7 +21,7 @@ public class Negation extends Node {
     @Override
     // Returns Latex of Negation
     public String toLatex() {
-        return "{(-" + child.toLatex() + ")}";
+        return "{\\left(-" + child.toLatex() + "\\right)}";
     }
     
 }
