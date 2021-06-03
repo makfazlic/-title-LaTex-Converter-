@@ -12,11 +12,9 @@ public class Help
     /**
      * Main of the LaTex converter.
      * 
-     * @param args represents command from the command line.
      */
     public static void main() {
-        final Function funct = new Function(null);
-        
+
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 final DrawHelp frame = new DrawHelp();
