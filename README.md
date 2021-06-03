@@ -11,11 +11,10 @@ Our project is a LaTex converter, this means that we can convert every mathemati
 
 ## How to run the program
 ***
-TODO
+Open the terminal and digit these command lines
 ```
-$ something here
-$ something here
-$ something here
+$ javac Main.java
+$ Main.java
 ```
 
 ## How it works
