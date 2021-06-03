@@ -14,7 +14,7 @@ public class Main
      * 
      * @param args represents command from the command line.
      */
-    public static void main(final String[] args) {
+    public static void main(String[] args) {
         final Function funct = new Function(null);
         
         EventQueue.invokeLater(new Runnable() {
@@ -25,4 +25,5 @@ public class Main
         } );
         
     }
+
 }
