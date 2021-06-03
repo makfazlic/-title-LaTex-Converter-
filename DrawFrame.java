@@ -41,8 +41,21 @@ public class DrawFrame extends JFrame
         final JPanel panel = new JPanel();
 
         final JButton convert = new JButton("Convert");   
+        convert.setPreferredSize(new Dimension(100, 41));
+        convert.setFont(new Font("Verdana", Font.PLAIN, 15));
+        convert.setBackground(Color.WHITE);
         final JButton add = new JButton("Add");
+        add.setPreferredSize(new Dimension(100, 41));
+        add.setFont(new Font("Verdana", Font.PLAIN, 15));
+        add.setBackground(Color.WHITE);
         final JButton process = new JButton("Process");
+        process.setPreferredSize(new Dimension(100, 41));
+        process.setBackground(Color.WHITE);
+        process.setFont(new Font("Verdana", Font.PLAIN, 15));
+        final JButton help = new JButton("Help");
+        help.setPreferredSize(new Dimension(100, 41));
+        help.setBackground(Color.WHITE);
+        help.setFont(new Font("Verdana", Font.PLAIN, 15));
         
         final JTextField sourcecode = new JTextField(funct.getExpression(), 15);
         final Font bigFont = sourcecode.getFont().deriveFont(Font.PLAIN, 30f);
@@ -52,6 +65,7 @@ public class DrawFrame extends JFrame
         panel.add(convert);
         panel.add(add);
         panel.add(process);
+        panel.add(help);
         add(panel, BorderLayout.NORTH);
 
         
@@ -61,12 +75,13 @@ public class DrawFrame extends JFrame
         label.setHorizontalTextPosition(SwingConstants.CENTER);
         label.setForeground(Color.white);
         label.setBounds(100, 100, 100, 100);
-        label.setFont(new Font("Verdana", Font.PLAIN, 50));
+        label.setFont(new Font("Verdana", Font.PLAIN, 40));
         label.setBorder(BorderFactory.createLineBorder(Color.black));
         add(label, BorderLayout.CENTER);
         
         
         final JLabel counter = new JLabel(funct.getExpression(), SwingConstants.CENTER);
+        counter.setFont(new Font("Verdana", Font.PLAIN, 15));
         add(counter, BorderLayout.SOUTH);
         convert.addActionListener(new ActionListener() { 
             public void actionPerformed(final ActionEvent e) {
@@ -99,6 +114,13 @@ public class DrawFrame extends JFrame
             public void actionPerformed(final ActionEvent e) {
                 label.setText("Initialized compilation");
                 label.setText(FormLatex.form(latex));
+            }
+        }
+        );
+        
+        help.addActionListener(new ActionListener() { 
+            public void actionPerformed(final ActionEvent e) {
+                Help.main();
             }
         }
         );

@@ -25,8 +25,8 @@ public class StringExpression extends Node {
 
     @Override
     // Returns Latex of Literal
-    public String toString() {
-        return value + ": " + expression.toString();
+    public String toLatex() {
+        return value + ": " + expression.toLatex();
     }
     
 }

@@ -77,7 +77,7 @@ public class Variable extends Node
     
     @Override
     // Returns Latex of Variable (replaces built in variables with latex)
-    public String toString() {
+    public String toLatex() {
         return "{" + name + "}";
     }
 }

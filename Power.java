@@ -24,7 +24,7 @@ public class Power extends Node
  
     @Override
     // Returns Latex of Power
-    public String toString() {
-        return "{" + child.toString() + "^{" + exponent.toString() + "}}";
+    public String toLatex() {
+        return "{" + child.toLatex() + "^{" + exponent.toLatex() + "}}";
     }
 }

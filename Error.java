@@ -22,7 +22,7 @@ public class Error extends Node {
  
     @Override
     // Returns Latex of Addition
-    public String toString() {
+    public String toLatex() {
         return this.errorMessage;
     }
     

@@ -29,7 +29,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Literal(12);
         // assertion
-        assertEquals(expectedRoot.toString(), actualRoot.toString());
+        assertEquals(expectedRoot.toLatex(), actualRoot.toLatex());
     }
 
     @Test
@@ -43,7 +43,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Variable("x");
         // assertion
-        assertEquals(expectedRoot.toString(), actualRoot.toString());
+        assertEquals(expectedRoot.toLatex(), actualRoot.toLatex());
     }
 
     @Test
@@ -57,7 +57,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Negation(new Literal(11));
         // assertion
-        assertEquals(expectedRoot.toString(), actualRoot.toString());
+        assertEquals(expectedRoot.toLatex(), actualRoot.toLatex());
     }
         
     @Test
@@ -71,7 +71,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Literal(11);
         // assertion
-        assertEquals(expectedRoot.toString(), actualRoot.toString());
+        assertEquals(expectedRoot.toLatex(), actualRoot.toLatex());
     }
        
     @Test
@@ -85,7 +85,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Addition(new Literal(12), new Literal(2));
         // assertion
-        assertEquals(expectedRoot.toString(), actualRoot.toString());
+        assertEquals(expectedRoot.toLatex(), actualRoot.toLatex());
     }
 
     @Test
@@ -99,7 +99,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Subtraction(new Literal(12), new Literal(2));
         // assertion
-        assertEquals(expectedRoot.toString(), actualRoot.toString());
+        assertEquals(expectedRoot.toLatex(), actualRoot.toLatex());
     }
 
     @Test
@@ -113,7 +113,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Multiplication(new Root(new Literal(2), new Addition(new Literal(2), new Literal(2))), new Addition(new Literal(4), new Literal(4)));
         // assertion
-        assertEquals(expectedRoot.toString(), actualRoot.toString());
+        assertEquals(expectedRoot.toLatex(), actualRoot.toLatex());
     }
 
     @Test
@@ -127,7 +127,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Division(new Root(new Literal(2), new Addition(new Literal(2), new Literal(2))), new Addition(new Literal(4), new Literal(4)));
         // assertion
-        assertEquals(expectedRoot.toString(), actualRoot.toString());
+        assertEquals(expectedRoot.toLatex(), actualRoot.toLatex());
     }
  
     @Test
@@ -141,7 +141,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Literal(12);
         // assertion
-        assertEquals(expectedRoot.toString(), actualRoot.toString());
+        assertEquals(expectedRoot.toLatex(), actualRoot.toLatex());
     }
     
     @Test
@@ -155,7 +155,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Power(new Multiplication(new Literal(2), new Literal(2)), new Literal(2));
         // assertion
-        assertEquals(expectedRoot.toString(), actualRoot.toString());
+        assertEquals(expectedRoot.toLatex(), actualRoot.toLatex());
     }
     
     @Test
@@ -169,7 +169,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Power(new Literal(2), new Literal(2));
         // assertion
-        assertEquals(expectedRoot.toString(), actualRoot.toString());
+        assertEquals(expectedRoot.toLatex(), actualRoot.toLatex());
     }
     
     @Test
@@ -183,7 +183,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Power(new Addition(new Literal(2), new Literal(2)), new Literal(2));
         // assertion
-        assertEquals(expectedRoot.toString(), actualRoot.toString());
+        assertEquals(expectedRoot.toLatex(), actualRoot.toLatex());
     }
     
     @Test
@@ -197,7 +197,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Root(new Literal(2), new Addition(new Literal(2), new Literal(2)));
         // assertion
-        assertEquals(expectedRoot.toString(), actualRoot.toString());
+        assertEquals(expectedRoot.toLatex(), actualRoot.toLatex());
     }
     
     @Test
@@ -211,7 +211,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Limit(new Addition(new Literal(2), new Literal(2)), new Variable("x"), new Literal(2));
         // assertion
-        assertEquals(expectedRoot.toString(), actualRoot.toString());
+        assertEquals(expectedRoot.toLatex(), actualRoot.toLatex());
     }
     
     @Test
@@ -225,7 +225,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Equation(new Addition(new Addition(new Literal(5), new Literal(4)), new Addition(new Literal(5), new Literal(4))), new Addition(new Addition(new Literal(5), new Literal(4)), new Addition(new Literal(5), new Literal(4))));
         // assertion
-        assertEquals(expectedRoot.toString(), actualRoot.toString());
+        assertEquals(expectedRoot.toLatex(), actualRoot.toLatex());
     }
     
     @Test
@@ -239,7 +239,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new StringMessage("Hello World");
         // assertion
-        assertEquals(expectedRoot.toString(), actualRoot.toString());
+        assertEquals(expectedRoot.toLatex(), actualRoot.toLatex());
     }
     
     @Test
@@ -253,7 +253,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new StringExpression("Hello World", new Equation(new Addition(new Variable("a"), new Variable("b")), new Addition(new Variable("b"), new Variable("a"))));
         // assertion
-        assertEquals(expectedRoot.toString(), actualRoot.toString());
+        assertEquals(expectedRoot.toLatex(), actualRoot.toLatex());
     }
     
     @Test
@@ -267,7 +267,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Limit(new Division(new Subtraction(new Literal(12), new Literal(2)), new Addition(new Literal(4), new Literal(4))), new Variable("x"), new Literal(10));
         // assertion
-        assertEquals(expectedRoot.toString(), actualRoot.toString());
+        assertEquals(expectedRoot.toLatex(), actualRoot.toLatex());
     }
 
     @Test
@@ -281,7 +281,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Limit(new Division(new Root(new Literal(2), new Addition(new Variable("x"), new Literal(2))), new Addition(new Literal(4), new Literal(4))), new Variable("x"), new Literal(10));
         // assertion
-        assertEquals(expectedRoot.toString(), actualRoot.toString());
+        assertEquals(expectedRoot.toLatex(), actualRoot.toLatex());
     }
     
     @Test
@@ -295,7 +295,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Limit(new Division(new Root(new Literal(2), new Addition(new Variable("x"), new Literal(2))), new Addition(new Literal(4), new Literal(4))), new Variable("x"), new Literal(10));
         // assertion
-        assertEquals("You must to start with colon after 'root' word", actualRoot.toString());
+        assertEquals("You must to start with colon after 'root' word", actualRoot.toLatex());
     }
     
     @Test
@@ -309,7 +309,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Limit(new Division(new Root(new Literal(2), new Addition(new Variable("x"), new Literal(2))), new Addition(new Literal(4), new Literal(4))), new Variable("x"), new Literal(10));
         // assertion
-        assertEquals("The body of the root and the grade must be separated by a colon", actualRoot.toString());
+        assertEquals("The body of the root and the grade must be separated by a colon", actualRoot.toLatex());
     }
     
     @Test
@@ -323,7 +323,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Limit(new Division(new Root(new Literal(2), new Addition(new Variable("x"), new Literal(2))), new Addition(new Literal(4), new Literal(4))), new Variable("x"), new Literal(10));
         // assertion
-        assertEquals("You must close the root operation with a colon", actualRoot.toString());
+        assertEquals("You must close the root operation with a colon", actualRoot.toLatex());
     }
     
     @Test
@@ -337,7 +337,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Limit(new Addition(new Literal(2), new Literal(2)), new Literal(2), new Literal(2));
         // assertion
-        assertEquals("You must to start with colon after 'lim' word", actualRoot.toString());
+        assertEquals("You must to start with colon after 'lim' word", actualRoot.toLatex());
     }
     
     @Test
@@ -351,7 +351,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Limit(new Addition(new Literal(2), new Literal(2)), new Literal(2), new Literal(2));
         // assertion
-        assertEquals("Put a comma between the variable and the variable value", actualRoot.toString());
+        assertEquals("Put a comma between the variable and the variable value", actualRoot.toLatex());
     }
     
     @Test
@@ -365,7 +365,7 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Limit(new Addition(new Literal(2), new Literal(2)), new Literal(2), new Literal(2));
         // assertion
-        assertEquals("The body of the limit and the variable section must be separated by a colon", actualRoot.toString());
+        assertEquals("The body of the limit and the variable section must be separated by a colon", actualRoot.toLatex());
     }
     
     @Test
@@ -379,6 +379,6 @@ public class ArithParserTest{
         // expected tree
         final Node expectedRoot = new Limit(new Addition(new Literal(2), new Literal(2)), new Literal(2), new Literal(2));
         // assertion
-        assertEquals("You must close the limit operation with a colon", actualRoot.toString());
+        assertEquals("You must close the limit operation with a colon", actualRoot.toLatex());
     }
 }

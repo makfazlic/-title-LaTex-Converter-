@@ -23,8 +23,8 @@ public class Addition extends Node {
  
     @Override
     // Returns Latex of Addition
-    public String toString() {
-        return "{\\left(" + leftChild.toString() + "+" + rightChild.toString() + "\\right)}";
+    public String toLatex() {
+        return "{\\left(" + leftChild.toLatex() + "+" + rightChild.toLatex() + "\\right)}";
     }
     
 }
