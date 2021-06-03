@@ -51,11 +51,14 @@ garbage
 - No progress
 
 ## 31th May, Monday
-- We add the possibility to convert a mathematical expression in LaTex
+- We add the possibility to convert a mathematical equation in LaTex
 - We add the possibility to add strings in the .tex file
 
-## TO DO
-- Help menu
-- Exception class to handle error
-- Create .pdf conversion
-- Write tests 
+# 1st June, Tuesday
+- PMD and Checkstyle violations fixed
+
+# 2nd June, Wednesday
+- We tried to figure out the problem of the conversion from .tex to .pdf file, doing an HTTP request to an API.
+
+# 3rd June, Thursday
+- We have prepared everything for the presentation.
