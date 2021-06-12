@@ -18,6 +18,11 @@ Open the terminal and digit these command lines
 $ javac Main.java
 $ Main.java
 ```
+or
+
+```
+$ ./run.sh
+```
 
 ## How it works
 ***
