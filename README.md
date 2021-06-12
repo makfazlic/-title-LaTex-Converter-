@@ -1,4 +1,6 @@
 # \title{LaTex Converter}
+
+![plot](./title.PNG)
 ## Table of Contents
 1. [General Info](#general-info)
 2. [How to run the program](#how-to-run-the-program)
