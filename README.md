@@ -1,4 +1,3 @@
-# \title{LaTex Converter}
 
 ![plot](./title.PNG)
 ## Table of Contents
