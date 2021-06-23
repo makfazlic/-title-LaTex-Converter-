@@ -28,7 +28,8 @@ public class FormLatex {
 "\\fancyhf{}"+
 "\\rhead{ROberto Ferrari and Mak Fazlic}"+
 "\\lhead{Latex Converter}"+
-"\\rfoot{Page \\thepage}";
+"\\rfoot{Page \\thepage}" +
+"\\begin{document}";
                                 
         final String end = "\\end{document}";
         
